@@ -1,0 +1,49 @@
+name: Refresh public profile
+on:
+  push:
+    branches: [main]
+    paths: ['README.md', 'assets/**', 'scripts/**', 'tests/**', '.github/workflows/profile.yml']
+  schedule:
+    - cron: '23 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test public metadata handling
+        run: python3 -m unittest discover -s tests -v
+      - name: Refresh public signal
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/update_activity.py
+      - name: Validate profile assets
+        run: python3 scripts/validate_profile.py
+      - name: Install preview renderer
+        if: github.event_name != 'schedule'
+        run: python3 -m pip install 'CairoSVG>=2.7,<3' 'Pillow>=10,<13'
+      - name: Render artwork preview
+        if: github.event_name != 'schedule'
+        run: python3 scripts/render_preview.py
+      - name: Commit updated public signal
+        run: |
+          if git diff --quiet -- assets/activity.svg; then
+            echo "Public signal is current."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/activity.svg
+          git commit -m "Refresh public repository signal"
+          git push
