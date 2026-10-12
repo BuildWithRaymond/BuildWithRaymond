@@ -5,7 +5,8 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 readme = (root / "README.md").read_text(encoding="utf-8")
-assert "Chaos.Client" not in readme, "Excluded project must not be listed"
+for excluded in ["Chaos.Client", "github.com/BuildWithRaymond/NewAges", "github.com/BuildWithRaymond/da)"]:
+    assert excluded not in readme, f"Excluded project must not be listed: {excluded}"
 references = re.findall(r'main/(assets/[^"]+)', readme)
 for name in references:
     assert (root / name).is_file(), f"Missing image: {name}"

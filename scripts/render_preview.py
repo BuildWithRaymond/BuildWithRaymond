@@ -6,7 +6,7 @@ import cairosvg
 from PIL import Image, ImageDraw
 
 root = Path(__file__).resolve().parents[1] / "assets"
-canvas = Image.new("RGB", (960, 1600), "#080d16")
+canvas = Image.new("RGB", (960, 2000), "#080d16")
 draw = ImageDraw.Draw(canvas)
 y = 12
 
@@ -20,10 +20,10 @@ for name in ["header.svg", "now.svg", "stack.svg"]:
     y += picture.height + 12
 draw.text((24, y + 3), "Dark Ages apps & tools", fill="#d9e4f1")
 y += 34
-picture = render("da-section.svg", 936)
+picture = render("da-workshop.svg", 936)
 canvas.paste(picture, (12, y), picture)
 y += picture.height + 10
-for left, right in [("organizer.svg", "merchant.svg"), ("quester.svg", "speaker.svg"), ("dasb.svg", "wiki.svg")]:
+for left, right in [("da-organizer.svg", "da-merchant.svg"), ("da-quester.svg", "da-speaker.svg"), ("da-dasb.svg", "da-wiki.svg")]:
     for name, x in [(left, 12), (right, 486)]:
         picture = render(name, 462)
         canvas.paste(picture, (x, y), picture)

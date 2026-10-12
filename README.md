@@ -25,37 +25,37 @@ I'm **Raymond**, an independent builder in Oklahoma. I build web apps, Windows d
 A collection of desktop companions, developer tools, and community projects for **Dark Ages**. Click a card to explore its repository.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-section.svg" width="960" alt="The DA collection: inventory, trade, quest, speak and build" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-workshop.svg" width="960" alt="The Dark Ages workshop — a moonlit castle, Celtic gold borders and drifting embers" />
 </p>
 
 <table>
 <tr>
 <td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DAOrganizer"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/organizer.svg" width="460" alt="DAOrganizer — Your collection, brought together." /></a><br />
+<a href="https://github.com/BuildWithRaymond/DAOrganizer"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-organizer.svg" width="460" alt="DAOrganizer — Your collection, brought together." /></a><br />
 <a href="https://github.com/BuildWithRaymond/DAOrganizer">Source</a> · <a href="https://github.com/BuildWithRaymond/DAOrganizer/releases/latest">Download</a>
 </td>
 <td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DAMerchant"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/merchant.svg" width="460" alt="DAMerchant — Set up shop. Keep it connected." /></a><br />
+<a href="https://github.com/BuildWithRaymond/DAMerchant"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-merchant.svg" width="460" alt="DAMerchant — Set up shop. Keep it connected." /></a><br />
 <a href="https://github.com/BuildWithRaymond/DAMerchant">Source</a> · <a href="https://github.com/BuildWithRaymond/DAMerchant/releases/latest">Download</a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DAQuester"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/quester.svg" width="460" alt="DAQuester — A journal for the journey ahead." /></a><br />
+<a href="https://github.com/BuildWithRaymond/DAQuester"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-quester.svg" width="460" alt="DAQuester — A journal for the journey ahead." /></a><br />
 <a href="https://github.com/BuildWithRaymond/DAQuester">Source</a> · <a href="https://github.com/BuildWithRaymond/DAQuester/releases/latest">Download</a>
 </td>
 <td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DASpeaker"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/speaker.svg" width="460" alt="DASpeaker — Your words, at your pace." /></a><br />
+<a href="https://github.com/BuildWithRaymond/DASpeaker"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-speaker.svg" width="460" alt="DASpeaker — Your words, at your pace." /></a><br />
 <a href="https://github.com/BuildWithRaymond/DASpeaker">Source</a> · <a href="https://github.com/BuildWithRaymond/DASpeaker/releases/latest">Download</a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DASB"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/dasb.svg" width="460" alt="DASB — A toolkit beneath the game." /></a><br />
+<a href="https://github.com/BuildWithRaymond/DASB"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-dasb.svg" width="460" alt="DASB — A toolkit beneath the game." /></a><br />
 <a href="https://github.com/BuildWithRaymond/DASB">Source</a>
 </td>
 <td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/UnoraWiki"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/wiki.svg" width="460" alt="UnoraWiki — Knowledge worth keeping together." /></a><br />
+<a href="https://github.com/BuildWithRaymond/UnoraWiki"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-wiki.svg" width="460" alt="UnoraWiki — Knowledge worth keeping together." /></a><br />
 <a href="https://github.com/BuildWithRaymond/UnoraWiki">Source</a>
 </td>
 </tr>
@@ -67,8 +67,6 @@ A collection of desktop companions, developer tools, and community projects for 
 | --- | --- |
 | [unora-wiki-svelte](https://github.com/BuildWithRaymond/unora-wiki-svelte) | Unora wiki frontend repository. |
 | [sveltia-cms-auth](https://github.com/BuildWithRaymond/sveltia-cms-auth) | CMS authentication repository for the wiki tooling. |
-| [NewAges](https://github.com/BuildWithRaymond/NewAges) | Dark Ages server emulator fork of [Chaos-Server](https://github.com/Sichii/Chaos-Server). |
-| [da](https://github.com/BuildWithRaymond/da) | C++ Dark Ages project fork of [wren11/da](https://github.com/wren11/da). |
 
 *UnoraWiki is a fork of [the Unora community wiki](https://github.com/unora-project/unora-project.github.io). Forks keep their upstream credit.*
 
