@@ -33,7 +33,7 @@ class ActivityTests(unittest.TestCase):
         calls = []
         def fetch(url):
             calls.append(url)
-            return [{"name": str(index)} for index in range(100)] if "page=1" in url else [{"name": "last"}]
+            return [{"name": str(index)} for index in range(100)] if url.endswith("&page=1") else [{"name": "last"}]
         self.assertEqual(len(self.activity.fetch_repositories("BuildWithRaymond", fetch)), 101)
         self.assertEqual(len(calls), 2)
 
