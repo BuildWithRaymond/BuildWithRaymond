@@ -1,8 +1,8 @@
 <picture>
-  <source media="(prefers-reduced-motion: no-preference) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/header-mobile.svg" />
-  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/header.svg" />
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/header-mobile-static.svg" />
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/header-static.svg" width="960" alt="Raymond Hernbrode — A higher standard online." />
+  <source media="(prefers-reduced-motion: no-preference) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/5e4b01cabeaa16497ba6ea42c83b1667757ffe70/assets/header-mobile.svg" />
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/5e4b01cabeaa16497ba6ea42c83b1667757ffe70/assets/header.svg" />
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/5e4b01cabeaa16497ba6ea42c83b1667757ffe70/assets/header-mobile-static.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/5e4b01cabeaa16497ba6ea42c83b1667757ffe70/assets/header-static.svg" width="960" alt="Raymond Hernbrode — A higher standard online." />
 </picture>
 
 <p>
