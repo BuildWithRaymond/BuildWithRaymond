@@ -36,9 +36,11 @@ class ImageReferences(HTMLParser):
 def local_asset_path(source, root=ROOT):
     """Map supported README image references to files; never make a web request."""
     parsed = urlsplit(source)
-    assert not parsed.query and not parsed.fragment, f"Unexpected image suffix: {source}"
+    assert "#" not in source, f"Image fragments are not allowed: {source}"
     if parsed.scheme or parsed.netloc:
         assert parsed.scheme == "https" and parsed.netloc == "raw.githubusercontent.com", f"Untrusted image host: {source}"
+        if "?" in source:
+            assert re.fullmatch(r"v=[A-Za-z0-9_-]{1,64}", parsed.query), f"Unsupported image version query: {source}"
         match = re.fullmatch(
             r"/BuildWithRaymond/BuildWithRaymond/(?:main|refs/heads/main|[0-9a-fA-F]{40})/(assets/.+)",
             unquote(parsed.path),
@@ -46,6 +48,7 @@ def local_asset_path(source, root=ROOT):
         assert match, f"Image must belong to this profile's assets: {source}"
         relative = match.group(1)
     else:
+        assert "?" not in source, f"Relative image queries are not allowed: {source}"
         relative = unquote(parsed.path)
         if relative.startswith("./"):
             relative = relative[2:]

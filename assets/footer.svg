@@ -1,12 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="176" viewBox="0 0 960 176" role="img" aria-labelledby="footer-title footer-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" id="footer-art" width="960" height="176" viewBox="0 0 960 176" role="img" aria-labelledby="footer-title footer-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="footer-title">Make something useful. Explore Raymond&#x27;s repositories.</title>
-<desc id="footer-desc">A static closing invitation to explore Raymond Hernbrode&#x27;s public repositories. Supplied Hernbrode mark and approved ink, cream, and orange identity.</desc>
-<rect width="960" height="176" fill="#F3EEE7"/>
-<g transform="translate(44 51) scale(0.526315789)"><g fill="#0B0B0B"><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g>
+<desc id="footer-desc">An invitation to explore Raymond Hernbrode&#x27;s public repositories. The arrow and orange rule move briefly, while the supplied mark and words remain stationary.</desc>
+<style>
+
+#footer-art .footer-arrow {animation: footer-invitation 9.8s cubic-bezier(.4,0,.2,1) infinite; transform-box: view-box;}
+#footer-art .footer-rail {animation: footer-rule 9.8s cubic-bezier(.4,0,.2,1) infinite; transform-box: fill-box; transform-origin: left center;}
+@keyframes footer-invitation {0%,10%,35%,100% {transform: translateX(0);} 20% {transform: translateX(9px);} 30% {transform: translateX(0);}}
+@keyframes footer-rule {0%,8%,35%,100% {transform: scaleX(1);} 23% {transform: scaleX(.88);}}
+
+@media (prefers-reduced-motion: reduce) {
+#footer-art .motion, #footer-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
+}
+</style>
+<rect width="960" height="176" fill="#1F1F1F"/>
+<g transform="translate(44 51) scale(0.526315789)"><g fill="#F3EEE7"><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g>
 </g>
-<text x="140" y="89" fill="#0B0B0B" font-size="52" font-weight="600" letter-spacing="-2">Make something useful.</text>
-<text x="143" y="133" fill="#0B0B0B" font-size="28" font-weight="400" letter-spacing="-.5">Explore the repositories.</text>
-<path d="M872 94H911M895 78L911 94L895 110" fill="none" stroke="#0B0B0B" stroke-width="3"/>
-<rect x="0" y="170" width="960" height="6" fill="#FF6A00"/>
-<rect x=".5" y=".5" width="959" height="175" fill="none" stroke="#0B0B0B" stroke-opacity=".18"/>
+<text x="140" y="89" fill="#F3EEE7" font-size="52" font-weight="600" letter-spacing="-2">Make something useful.</text>
+<text x="143" y="133" fill="#F3EEE7" font-size="28" font-weight="400" letter-spacing="-.5">Explore the repositories.</text>
+<path class="motion footer-arrow" d="M872 94H911M895 78L911 94L895 110" fill="none" stroke="#F3EEE7" stroke-width="3"/>
+<rect class="motion footer-rail" x="0" y="170" width="960" height="6" fill="#FF6A00"/>
+<rect x=".5" y=".5" width="959" height="175" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
 </svg>

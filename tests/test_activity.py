@@ -157,6 +157,8 @@ class ActivityTests(unittest.TestCase):
             for source in ["assets/sample.svg", "./assets/sample.svg",
                            "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg",
                            "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/sample.svg",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/sample.svg?v=motion-20261027",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?v=art_v2",
                            "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/" + "a" * 40 + "/assets/sample.svg"]:
                 self.assertEqual(validator.local_asset_path(source, root), asset.resolve())
             for source in ["../assets/sample.svg", "assets/../README.md", "assets/%2e%2e/sample.svg",
@@ -164,6 +166,15 @@ class ActivityTests(unittest.TestCase):
                            "https://raw.githubusercontent.com/other/profile/main/assets/sample.svg",
                            "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/develop/assets/sample.svg",
                            "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main-other/assets/sample.svg",
+                           "assets/sample.svg?v=motion-20261027", "assets/sample.svg?",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?other=value",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?v=good&other=value",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?v=good&v=other",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?v=",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?v=" + "a" * 65,
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?v=unsafe%20value",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?v=good#fragment",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg?v=good#",
                            "assets/sample.svg?fetch=remote", "data:image/svg+xml,sample"]:
                 with self.subTest(source=source), self.assertRaises(AssertionError):
                     validator.local_asset_path(source, root)

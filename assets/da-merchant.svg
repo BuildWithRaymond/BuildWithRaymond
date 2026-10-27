@@ -1,11 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="da-merchant-title da-merchant-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" id="da-merchant-art" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="da-merchant-title da-merchant-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="da-merchant-title">DAMerchant — Set up shop. Keep it connected.</title>
-<desc id="da-merchant-desc">Trading tools with AislingExchange integration. TypeScript / Windows. Static Hernbrode profile project header; not a replacement application identity.</desc>
+<desc id="da-merchant-desc">Trading tools with AislingExchange integration. TypeScript / Windows. A restrained corner trace and underline frame the stationary project name. Complete static artwork is shown with reduced motion.</desc>
+<style>
+
+#da-merchant-art .corner {animation: da-merchant-corner 10.4s ease-in-out 0.18s infinite;}
+#da-merchant-art .underline {animation: da-merchant-underline 10.4s cubic-bezier(.4,0,.2,1) 0.18s infinite; transform-box: fill-box; transform-origin: left center;}
+@keyframes da-merchant-corner {0%,8%,35%,100% {stroke-dasharray: 120 0; stroke-dashoffset: 0;} 16% {stroke-dasharray: 28 92; stroke-dashoffset: 0;} 28% {stroke-dasharray: 28 92; stroke-dashoffset: -120;} 34% {stroke-dasharray: 120 0; stroke-dashoffset: -120;}}
+@keyframes da-merchant-underline {0%,10%,36%,100% {transform: translateX(0) scaleX(1);} 25% {transform: translateX(-270px) scaleX(1.45);}}
+
+@media (prefers-reduced-motion: reduce) {
+#da-merchant-art .motion, #da-merchant-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
+}
+</style>
 <rect width="460" height="220" fill="#0B0B0B"/>
 <rect x="28" y="28" width="46" height="5" fill="#FF6A00"/>
 <text x="25" y="107" fill="#F3EEE7" font-size="53" font-weight="600" letter-spacing="-2.4">DAMerchant</text>
 <text x="28" y="153" fill="#F3EEE7" font-size="25" font-weight="400" letter-spacing="-.5">Trading &amp; exchange</text>
 <path d="M28 188H432" fill="none" stroke="#F3EEE7" stroke-opacity=".2"/>
-<rect x="426" y="28" width="6" height="22" fill="#FF6A00"/>
+<path class="motion corner" d="M28 173V188H58" pathLength="120" fill="none" stroke="#FF6A00" stroke-width="2"/>
+<rect class="motion underline" x="360" y="187" width="32" height="2" fill="#FF6A00"/>
 <rect x=".5" y=".5" width="459" height="219" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
 </svg>

@@ -35,6 +35,23 @@ def summarize(repositories, username):
             "languages": sorted(languages.items(), key=lambda item: (-item[1], item[0]))[:4]}
 
 
+def accent_motion(x1, x2, y):
+    # Only this optional rail moves. All figures, language bars and labels stay put.
+    return f'''<style>
+.activity-sweep{{opacity:0;animation:activity-rail 9s ease-in-out infinite}}
+@keyframes activity-rail{{
+0%,12%{{stroke-dashoffset:0;opacity:0}}
+16%{{opacity:.85}}
+42%{{stroke-dashoffset:-.92;opacity:.85}}
+46%,100%{{stroke-dashoffset:-.92;opacity:0}}
+}}
+@media(prefers-reduced-motion:reduce){{
+.activity-sweep{{animation:none!important;opacity:0!important;stroke-dashoffset:0!important}}
+}}
+</style>
+<path class="activity-sweep" d="M{x1} {y} H{x2}" pathLength="1" fill="none" stroke="#FF6A00" stroke-width="2" stroke-dasharray=".08 .92" stroke-dashoffset="0" opacity="0" aria-hidden="true"/>'''
+
+
 def render(summary, updated_date):
     nodes = []
     total = sum(count for _, count in summary["languages"])
@@ -57,6 +74,7 @@ def render(summary, updated_date):
 <text x="932" y="34" text-anchor="end" fill="#BDB6AD" font-size="13">UPDATED {escape(updated_date)} UTC</text>
 <path d="M28 56 H932 M458 84 V185" stroke="#1F1F1F"/>
 <path d="M28 56 H76" stroke="#FF6A00" stroke-width="2"/>
+{accent_motion(28, 932, 56)}
 <text x="28" y="136" fill="#F3EEE7" font-size="54" font-weight="700">{summary['projects']:02d}</text>
 <text x="28" y="166" fill="#BDB6AD" font-size="16">Original public repositories</text>
 <text x="268" y="136" fill="#F3EEE7" font-size="54" font-weight="700">{summary['stars']:02d}</text>
@@ -85,6 +103,7 @@ def render_mobile(summary, updated_date):
 <text x="24" y="38" fill="#F3EEE7" font-size="22" font-weight="600" letter-spacing="2">PUBLIC SIGNAL</text>
 <path d="M24 58 H456 M24 212 H456 M24 398 H456" stroke="#1F1F1F"/>
 <path d="M24 58 H72" stroke="#FF6A00" stroke-width="2"/>
+{accent_motion(24, 456, 58)}
 <text x="24" y="132" fill="#F3EEE7" font-size="64" font-weight="700">{summary['projects']:02d}</text>
 <text x="24" y="166" fill="#BDB6AD" font-size="22">Original public</text>
 <text x="24" y="194" fill="#BDB6AD" font-size="22">repositories</text>

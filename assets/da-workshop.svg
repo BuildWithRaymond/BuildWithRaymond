@@ -1,6 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="220" viewBox="0 0 960 220" role="img" aria-labelledby="da-workshop-title da-workshop-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" id="da-workshop-art" width="960" height="220" viewBox="0 0 960 220" role="img" aria-labelledby="da-workshop-title da-workshop-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="da-workshop-title">Dark Ages — Apps and community tools</title>
 <desc id="da-workshop-desc">A section header for Raymond&#x27;s actual Dark Ages applications and community tools. Brand typography, not an application logo or invented interface.</desc>
+<style>
+
+#da-workshop-art .workshop-marker {animation: workshop-rule 10.4s cubic-bezier(.4,0,.2,1) .36s infinite; transform-box: view-box;}
+@keyframes workshop-rule {0%,8%,35%,100% {transform: translateY(0);} 23% {transform: translateY(110px);}}
+
+@media (prefers-reduced-motion: reduce) {
+#da-workshop-art .motion, #da-workshop-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
+}
+</style>
 <rect width="960" height="220" fill="#1F1F1F"/>
 <rect x="44" y="36" width="60" height="6" fill="#FF6A00"/>
 <text x="40" y="123" fill="#F3EEE7" font-size="76" font-weight="600" letter-spacing="-3.8">Dark Ages</text>
@@ -8,5 +17,6 @@
 <path d="M590 42V178" fill="none" stroke="#F3EEE7" stroke-opacity=".2"/>
 <text x="638" y="104" fill="#BDB6AD" font-size="32" font-weight="400" letter-spacing="-.5">Selected</text>
 <text x="638" y="150" fill="#F3EEE7" font-size="40" font-weight="550" letter-spacing="-1.2">projects.</text>
+<rect class="motion workshop-marker" x="588.5" y="42" width="3" height="26" fill="#FF6A00"/>
 <rect x=".5" y=".5" width="959" height="219" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
 </svg>

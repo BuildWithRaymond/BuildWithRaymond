@@ -1,8 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="130" viewBox="0 0 960 130" role="img" aria-labelledby="now-title now-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" id="now-art" width="960" height="130" viewBox="0 0 960 130" role="img" aria-labelledby="now-title now-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="now-title">Web apps. Desktop tools. Game systems.</title>
-<desc id="now-desc">Raymond&#x27;s areas of work: web applications, desktop tools, and game systems. Static profile artwork.</desc>
+<desc id="now-desc">Raymond&#x27;s areas of work: web applications, desktop tools, and game systems. A quiet marker follows the areas without moving the text.</desc>
+<style>
+
+#now-art .category-marker {animation: now-categories 12s cubic-bezier(.4,0,.2,1) infinite; transform-box: view-box;}
+@keyframes now-categories {0%,8%,35%,100% {transform: translateX(0);} 17% {transform: translateX(235px);} 26% {transform: translateX(560px);}}
+
+@media (prefers-reduced-motion: reduce) {
+#now-art .motion, #now-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
+}
+</style>
 <rect width="960" height="130" fill="#1F1F1F"/>
 <rect x="44" y="32" width="48" height="5" fill="#FF6A00"/>
 <text x="44" y="93" fill="#F3EEE7" font-size="40" font-weight="400" letter-spacing="-1.2">Web apps. Desktop tools. Game systems.</text>
+<path d="M44 112H916" fill="none" stroke="#F3EEE7" stroke-opacity=".2"/>
+<rect class="motion category-marker" x="44" y="110" width="140" height="3" fill="#FF6A00"/>
 <rect x=".5" y=".5" width="959" height="129" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
 </svg>
