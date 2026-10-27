@@ -103,35 +103,40 @@ def drawn_path(d, action, color=ORANGE, width=2, track_opacity=".18"):
 
 
 def header_accent(name, mobile=False):
-    """The clip is entirely below copy and left of the protected logo panel."""
-    x, y, width, height = (28, 396, 278, 68) if mobile else (44, 366, 576, 36)
-    orange = "M36 438L84 413.6883" if mobile else "M52 394L100 369.6883"
-    companion = "M36 430L64 415.8182" if mobile else "M52 386L80 371.8182"
+    """A fixed brand rule; its faint highlight never leaves the rule itself."""
+    x, y, width, height = (28, 446, 66, 6) if mobile else (44, 378, 72, 6)
     return (
-        f'<defs><clipPath id="{name}-accent-clip"><rect x="{x}" y="{y}" '
-        f'width="{width}" height="{height}"/></clipPath></defs>'
-        f'<g clip-path="url(#{name}-accent-clip)">'
-        f'<path class="motion accent-companion" d="{companion}" fill="none" '
-        f'stroke="{MUTED}" stroke-width="2"/>'
-        f'<path class="motion accent-pass" d="{orange}" fill="none" '
-        f'stroke="{ORANGE}" stroke-width="6"/>'
+        f'<defs><clipPath id="{name}-rule-clip"><rect x="{x}" y="{y}" '
+        f'width="{width}" height="{height}"/></clipPath>'
+        f'<linearGradient id="{name}-rule-light" x1="0%" x2="100%">'
+        f'<stop offset="0" stop-color="{CREAM}" stop-opacity="0"/>'
+        f'<stop offset=".5" stop-color="{CREAM}" stop-opacity=".7"/>'
+        f'<stop offset="1" stop-color="{CREAM}" stop-opacity="0"/>'
+        '</linearGradient></defs>'
+        f'<rect x="{x}" y="{y}" width="{width}" height="{height}" fill="{ORANGE}"/>'
+        f'<g clip-path="url(#{name}-rule-clip)">'
+        f'<rect class="motion rule-highlight" x="{x - 28}" y="{y}" '
+        f'width="28" height="{height}" fill="url(#{name}-rule-light)" opacity="0"/>'
         '</g>'
     )
 
 
 def header_motion(name, width, repeat=True):
-    """A forward pass exits the accent clip before any reset. No return trip."""
-    travel = width + 80
+    """One soft light pass inside an anchored rule, with a long quiet interval."""
+    travel = width + 28
     count = "infinite" if repeat else "1"
-    duration = 3.8 if repeat else 1.62
-    end = "40%,100%" if repeat else "100%"
-    companion_end = "44%,100%" if repeat else "100%"
-    companion_duration = 3.8 if repeat else 1.70
+    duration = 6 if repeat else 1.8
     return motion_style(name, f"""
-#{name}-art .accent-pass {{animation: {name}-pass {duration}s cubic-bezier(.35,0,.2,1) .12s {count} both; transform-box: view-box;}}
-#{name}-art .accent-companion {{animation: {name}-companion {companion_duration}s cubic-bezier(.35,0,.2,1) .24s {count} both; transform-box: view-box;}}
-@keyframes {name}-pass {{0% {{transform: translateX(-110px);}} {end} {{transform: translateX({travel}px);}}}}
-@keyframes {name}-companion {{0% {{transform: translateX(-110px);}} {companion_end} {{transform: translateX({travel}px);}}}}
+#{name}-art .rule-highlight {{animation: {name}-light {duration}s linear {count} both; transform-box: view-box;}}
+@keyframes {name}-light {{
+0%,8% {{transform: translateX(0); opacity: 0;}}
+10% {{opacity: .22;}}
+26% {{transform: translateX({travel}px); opacity: .22;}}
+28%,100% {{transform: translateX({travel}px); opacity: 0;}}
+}}
+@media (prefers-reduced-motion: reduce) {{
+#{name}-art .motion.rule-highlight {{animation: none !important; opacity: 0 !important; transform: none !important;}}
+}}
 """)
 
 
@@ -227,7 +232,7 @@ def render(brand_dir, output):
     assets["header.svg"] = svg(
         "header", 960, 420,
         "Raymond Hernbrode — A higher standard online.",
-        "Raymond Hernbrode and the supplied outlined Hernbrode identity. Orange accents move forward in a separate area below the copy, entirely clear of both stationary logos.",
+        "Raymond Hernbrode and the supplied outlined Hernbrode identity. A fixed short orange rule carries a faint light pass; both logos and all typography remain stationary.",
         [
             f'<rect x="688" width="272" height="420" fill="{CHARCOAL}"/>',
             identity(brand_dir, "logo-cream.svg", 44, 38, 246),
@@ -238,7 +243,7 @@ def render(brand_dir, output):
             header_accent("header"),
             identity(brand_dir, "mark-cream.svg", 748, 116, 152),
             f'<rect x="688" y="412" width="272" height="8" fill="{ORANGE}"/>',
-        ], motion=header_motion("header", 576),
+        ], motion=header_motion("header", 72),
     )
     assets["header-mobile.svg"] = svg(
         "header-mobile", 480, 500,
@@ -254,7 +259,7 @@ def render(brand_dir, output):
             f'<rect x="344" y="386" width="108" height="114" fill="{CHARCOAL}"/>',
             header_accent("header-mobile", mobile=True),
             identity(brand_dir, "mark-cream.svg", 369, 406, 58),
-        ], motion=header_motion("header-mobile", 278),
+        ], motion=header_motion("header-mobile", 66),
     )
     assets["now.svg"] = svg(
         "now", 960, 130,

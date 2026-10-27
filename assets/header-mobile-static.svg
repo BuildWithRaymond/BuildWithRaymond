@@ -10,7 +10,7 @@
 <text x="28" y="317" fill="#F3EEE7" font-size="37" font-weight="400" letter-spacing="-1.2">A higher standard</text>
 <text x="28" y="360" fill="#F3EEE7" font-size="37" font-weight="400" letter-spacing="-1.2">online.</text>
 <rect x="344" y="386" width="108" height="114" fill="#1F1F1F" />
-<defs><clipPath id="header-mobile-accent-clip"><rect x="28" y="396" width="278" height="68" /></clipPath></defs><g clip-path="url(#header-mobile-accent-clip)"><path class="motion accent-companion" d="M36 430L64 415.8182" fill="none" stroke="#BDB6AD" stroke-width="2" /><path class="motion accent-pass" d="M36 438L84 413.6883" fill="none" stroke="#FF6A00" stroke-width="6" /></g>
+<defs><clipPath id="header-mobile-rule-clip"><rect x="28" y="446" width="66" height="6" /></clipPath><linearGradient id="header-mobile-rule-light" x1="0%" x2="100%"><stop offset="0" stop-color="#F3EEE7" stop-opacity="0" /><stop offset=".5" stop-color="#F3EEE7" stop-opacity=".7" /><stop offset="1" stop-color="#F3EEE7" stop-opacity="0" /></linearGradient></defs><rect x="28" y="446" width="66" height="6" fill="#FF6A00" /><g clip-path="url(#header-mobile-rule-clip)"><rect class="motion rule-highlight" x="0" y="446" width="28" height="6" fill="url(#header-mobile-rule-light)" opacity="0" /></g>
 <g transform="translate(369 406) scale(0.508771930)"><g fill="#F3EEE7"><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g>
 </g>
 <rect x=".5" y=".5" width="479" height="499" fill="none" stroke="#F3EEE7" stroke-opacity=".18" />
