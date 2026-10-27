@@ -1,29 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
-<title id="title">Build with Raymond — web apps, desktop tools and game systems</title><desc id="desc">Build with Raymond — web apps, desktop tools and game systems</desc>
-<defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1423"/><stop offset="1" stop-color="#080d16"/></linearGradient>
-<linearGradient id="accent"><stop stop-color="#67e8f9"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
-<radialGradient id="halo"><stop stop-color="#164c63" stop-opacity=".45"/><stop offset="1" stop-color="#164c63" stop-opacity="0"/></radialGradient>
-</defs>
-<style>.sans{font-family:'Segoe UI',Arial,sans-serif}.mono{font-family:Consolas,'Courier New',monospace}@media(prefers-reduced-motion:reduce){.motion{display:none}}</style>
-
-<rect x=".5" y=".5" width="959" height="359" rx="18" fill="url(#bg)" stroke="#26364d"/>
-<g stroke="#23334b" stroke-width=".7" opacity=".25"><path d="M0 0 V360"/><path d="M40 0 V360"/><path d="M80 0 V360"/><path d="M120 0 V360"/><path d="M160 0 V360"/><path d="M200 0 V360"/><path d="M240 0 V360"/><path d="M280 0 V360"/><path d="M320 0 V360"/><path d="M360 0 V360"/><path d="M400 0 V360"/><path d="M440 0 V360"/><path d="M480 0 V360"/><path d="M520 0 V360"/><path d="M560 0 V360"/><path d="M600 0 V360"/><path d="M640 0 V360"/><path d="M680 0 V360"/><path d="M720 0 V360"/><path d="M760 0 V360"/><path d="M800 0 V360"/><path d="M840 0 V360"/><path d="M880 0 V360"/><path d="M920 0 V360"/><path d="M960 0 V360"/><path d="M0 0 H960"/><path d="M0 40 H960"/><path d="M0 80 H960"/><path d="M0 120 H960"/><path d="M0 160 H960"/><path d="M0 200 H960"/><path d="M0 240 H960"/><path d="M0 280 H960"/><path d="M0 320 H960"/><path d="M0 360 H960"/></g>
-<circle cx="781" cy="174" r="183" fill="url(#halo)"/>
-<path d="M35 39 H51 M35 39 V55 M909 39 H925 V55 M35 305 V321 H51 M909 321 H925 V305" fill="none" stroke="#67e8f9" stroke-opacity=".5"/>
-<text x="57" y="48" class="mono" fill="#93a8c2" font-size="11" letter-spacing="2">INDEPENDENT BUILDER / OKLAHOMA</text>
-<g class="sans" font-weight="700" letter-spacing="-2"><text x="53" y="126" fill="#eef5ff" font-size="56">Build with</text><text x="49" y="209" fill="url(#accent)" font-size="88">Raymond.</text></g>
-<text x="56" y="244" class="sans" fill="#b1c2d7" font-size="17">Useful tools. Thoughtful interfaces. Real projects.</text>
-<path d="M56 272 H573" stroke="#273a51"/>
-<text x="56" y="298" class="mono" font-size="11" letter-spacing="1.6" fill="#8ea3bd">WEB APPS / DESKTOP TOOLS / GAME SYSTEMS</text>
-<g fill="none" stroke="#24435b"><path d="M642 97 H683 V130 H718 M920 253 H869 V218 H839 M674 288 V259 H718"/><circle cx="776" cy="174" r="92"/><circle cx="776" cy="174" r="75" stroke-dasharray="2 9"/><path d="M776 115 L827 144 V203 L776 233 L725 203 V144 Z" fill="#0b1c2e" stroke="#4dbfd1"/></g>
-<g class="motion" fill="none">
-<circle cx="776" cy="174" r="106" stroke="#67e8f9" stroke-width="2" stroke-dasharray="40 155 12 460" opacity=".85"><animateTransform attributeName="transform" type="rotate" from="0 776 174" to="360 776 174" dur="26s" repeatCount="indefinite"/></circle>
-<circle cx="776" cy="174" r="87" stroke="#a78bfa" stroke-dasharray="17 530" stroke-width="2"><animateTransform attributeName="transform" type="rotate" from="360 776 174" to="0 776 174" dur="19s" repeatCount="indefinite"/></circle><circle r="2.5" fill="#67e8f9"><animateMotion path="M669 85 H776 V174" dur="6s" begin="0s" repeatCount="indefinite"/></circle><circle r="2.5" fill="#67e8f9"><animateMotion path="M858 95 H776 V174" dur="7s" begin="-1s" repeatCount="indefinite"/></circle><circle r="2.5" fill="#67e8f9"><animateMotion path="M895 243 H776 V174" dur="8s" begin="-2s" repeatCount="indefinite"/></circle><circle r="2.5" fill="#67e8f9"><animateMotion path="M658 265 H776 V174" dur="9s" begin="-3s" repeatCount="indefinite"/></circle>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="header-title header-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<title id="header-title">Raymond Hernbrode — A higher standard online.</title>
+<desc id="header-desc">Raymond Hernbrode and the supplied outlined Hernbrode identity. Static ink, cream, and orange profile artwork.</desc>
+<rect width="960" height="420" fill="#0B0B0B"/>
+<rect x="688" width="272" height="420" fill="#F3EEE7"/>
+<g transform="translate(44 38) scale(0.321148825)"><g fill="#F3EEE7"><g><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g><g transform="translate(150 10)"><path d="M0 2H21V39H57V2H78V95H57V58H21V95H0Z" fill-rule="evenodd" /><path d="M35.5 0C14 0 0 15 0 36C0 57 14 72 36 72C52 72 65 64 70 50L50 48C47 54 43 57 36 57C26 57 20 52 19 43H71V36C71 14 57 0 35.5 0Z M20 28C23 20 29 17 36 17C44 17 50 21 52 28Z" fill-rule="evenodd" transform="translate(82 25)" /><path d="M0 1H19V11C24 3 32 0 43 0V19C29 18 21 26 21 39V69H0Z" fill-rule="evenodd" transform="translate(157 26)" /><path d="M0 2H20V11C25 4 32 0 42 0C58 0 67 11 67 29V70H47V34C47 23 43 18 35 18C26 18 20 25 20 36V70H0Z" fill-rule="evenodd" transform="translate(203 25)" /><path d="M0 0H20V35C26 28 34 25 44 25C61 25 73 40 73 61C73 82 61 97 43 97C33 97 26 94 20 87V95H0Z M54.5 61 C54.5 71.217 46.665 79.5 37 79.5 C27.335 79.5 19.5 71.217 19.5 61 C19.5 50.783 27.335 42.5 37 42.5 C46.665 42.5 54.5 50.783 54.5 61 Z" fill-rule="evenodd" transform="translate(276 0)" /><path d="M0 1H19V11C24 3 32 0 43 0V19C29 18 21 26 21 39V69H0Z" fill-rule="evenodd" transform="translate(353 26)" /><path d="M71 36 C71 55.882 55.106 72 35.5 72 C15.894 72 0 55.882 0 36 C0 16.118 15.894 0 35.5 0 C55.106 0 71 16.118 71 36 Z M53 36 C53 46.217 45.165 54.5 35.5 54.5 C25.835 54.5 18 46.217 18 36 C18 25.783 25.835 17.5 35.5 17.5 C45.165 17.5 53 25.783 53 36 Z" fill-rule="evenodd" transform="translate(396 25)" /><path d="M0 0H20V35C26 28 34 25 44 25C61 25 73 40 73 61C73 82 61 97 43 97C33 97 26 94 20 87V95H0Z M54.5 61 C54.5 71.217 46.665 79.5 37 79.5 C27.335 79.5 19.5 71.217 19.5 61 C19.5 50.783 27.335 42.5 37 42.5 C46.665 42.5 54.5 50.783 54.5 61 Z" fill-rule="evenodd" transform="translate(543 0) scale(-1 1)" /><path d="M35.5 0C14 0 0 15 0 36C0 57 14 72 36 72C52 72 65 64 70 50L50 48C47 54 43 57 36 57C26 57 20 52 19 43H71V36C71 14 57 0 35.5 0Z M20 28C23 20 29 17 36 17C44 17 50 21 52 28Z" fill-rule="evenodd" transform="translate(545 25)" /></g></g>
 </g>
-<path d="M752 194 V151 H779 Q796 151 796 167 Q796 180 778 181 H753 M777 181 L798 198" fill="none" stroke="#e1f9ff" stroke-width="6" stroke-linejoin="round"/>
-<g class="mono" font-size="10" fill="#a8bed6"><text x="685" y="68">&lt;build /&gt;</text><text x="873" y="156">ship()</text><text x="745" y="309">iterate</text></g>
-<g fill="#0b1423" stroke="#43647d"><circle cx="669" cy="85" r="4"/><circle cx="858" cy="95" r="4"/><circle cx="895" cy="243" r="4"/><circle cx="658" cy="265" r="4"/></g>
-<circle cx="860" cy="46" r="3" fill="#6ee7b7"/><text x="872" y="50" class="mono" fill="#93a8c2" font-size="9">BUILD MODE</text>
-
+<path d="M44 108H642" fill="none" stroke="#F3EEE7" stroke-opacity=".2"/>
+<text x="40" y="190" fill="#F3EEE7" font-size="72" font-weight="600" letter-spacing="-3.4">Raymond</text>
+<text x="40" y="269" fill="#F3EEE7" font-size="72" font-weight="600" letter-spacing="-3.4">Hernbrode.</text>
+<text x="44" y="341" fill="#F3EEE7" font-size="39" font-weight="400" letter-spacing="-1.3">A higher standard online.</text>
+<rect x="44" y="378" width="72" height="6" fill="#FF6A00"/>
+<g transform="translate(748 116) scale(1.333333333)"><g fill="#0B0B0B"><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g>
+</g>
+<rect x="688" y="412" width="272" height="8" fill="#FF6A00"/>
+<rect x=".5" y=".5" width="959" height="419" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
 </svg>

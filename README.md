@@ -1,89 +1,69 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/header.svg" width="960" alt="Build with Raymond — web apps, desktop tools and game systems" />
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/now.svg" width="960" alt="In the workshop: useful desktop tools, web interfaces and game systems" />
-</p>
-<p align="center">
-  <a href="#dark-ages-apps--tools">Dark Ages apps</a> · <a href="#what-i-build">What I build</a> · <a href="#built-in-public">Public signal</a> · <a href="https://github.com/BuildWithRaymond?tab=repositories">All repositories</a>
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/header-mobile.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/header.svg" width="960" alt="Raymond Hernbrode — A higher standard online." />
+</picture>
+
+<p>
+  <a href="#what-i-build">What I build</a> · <a href="#selected-public-projects">Selected projects</a> · <a href="https://github.com/BuildWithRaymond?tab=repositories">All repositories ↗</a>
 </p>
 
-I'm **Raymond**, an independent builder in Oklahoma. I build web apps, Windows desktop tools, and game systems. I like taking a messy workflow and making the next step obvious.
+I'm **Raymond Hernbrode**, the designer and developer behind **Hernbrode**. I started making websites as a hobby at 13, then moved into WordPress. That interest grew into building websites, web applications, and desktop tools.
+
+Hernbrode is my independent studio. I handle the design, development, and ongoing website work myself, from the first brief to the next improvement.
 
 ## What I build
 
-- **Desktop companions** — focused tools for inventory, planning, trading, and communication.
-- **Web applications** — interfaces, dashboards, and the services that connect them.
-- **Game systems** — community tools, protocol tooling, and experiments that start with a useful idea.
+- **Websites** — Shopify, WordPress, and custom sites, with a clear structure and careful attention to how people use them.
+- **Apps and custom features** — themes, integrations, web interfaces, and Windows tools built around a specific workflow.
+- **Ongoing website management** — agreed content changes, site checks, and improvements after launch, with priorities and scope worked out together.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/stack.svg" width="960" alt="C#, .NET, Avalonia, TypeScript, React, Next.js, Node.js and SQLite" />
-</p>
+My approach: make the next step clear, keep the controls understandable, and show what happened. The public projects below put those ideas into practice.
 
-## Dark Ages apps & tools
+## Selected public projects
 
-A collection of desktop companions, developer tools, and community projects for **Dark Ages**. Click a card to explore its repository.
+Apps and community tools for **Dark Ages**. These are community software projects; each repository has its own documentation and release information.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-workshop.svg" width="960" alt="The Dark Ages workshop — a moonlit castle, Celtic gold borders and drifting embers" />
-</p>
+### [DAMerchant](https://github.com/BuildWithRaymond/DAMerchant)
 
-<table>
-<tr>
-<td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DAOrganizer"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-organizer.svg" width="460" alt="DAOrganizer — Your collection, brought together." /></a><br />
-<a href="https://github.com/BuildWithRaymond/DAOrganizer">Source</a> · <a href="https://github.com/BuildWithRaymond/DAOrganizer/releases/latest">Download</a>
-</td>
-<td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DAMerchant"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-merchant.svg" width="460" alt="DAMerchant — Set up shop. Keep it connected." /></a><br />
-<a href="https://github.com/BuildWithRaymond/DAMerchant">Source</a> · <a href="https://github.com/BuildWithRaymond/DAMerchant/releases/latest">Download</a>
-</td>
-</tr>
-<tr>
-<td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DAQuester"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-quester.svg" width="460" alt="DAQuester — A journal for the journey ahead." /></a><br />
-<a href="https://github.com/BuildWithRaymond/DAQuester">Source</a> · <a href="https://github.com/BuildWithRaymond/DAQuester/releases/latest">Download</a>
-</td>
-<td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DASpeaker"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-speaker.svg" width="460" alt="DASpeaker — Your words, at your pace." /></a><br />
-<a href="https://github.com/BuildWithRaymond/DASpeaker">Source</a> · <a href="https://github.com/BuildWithRaymond/DASpeaker/releases/latest">Download</a>
-</td>
-</tr>
-<tr>
-<td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/DASB"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-dasb.svg" width="460" alt="DASB — A toolkit beneath the game." /></a><br />
-<a href="https://github.com/BuildWithRaymond/DASB">Source</a>
-</td>
-<td width="50%" align="center">
-<a href="https://github.com/BuildWithRaymond/UnoraWiki"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-wiki.svg" width="460" alt="UnoraWiki — Knowledge worth keeping together." /></a><br />
-<a href="https://github.com/BuildWithRaymond/UnoraWiki">Source</a>
-</td>
-</tr>
-</table>
+<a href="https://github.com/BuildWithRaymond/DAMerchant"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-merchant.svg" width="460" alt="DAMerchant / Trading and exchange" /></a>
 
-### More from the DA workshop
+A Windows trading tool that brings character listings, trade history, and an AislingExchange marketplace connection into one interface.
 
-| Project | Role |
-| --- | --- |
-| [unora-wiki-svelte](https://github.com/BuildWithRaymond/unora-wiki-svelte) | Unora wiki frontend repository. |
-| [sveltia-cms-auth](https://github.com/BuildWithRaymond/sveltia-cms-auth) | CMS authentication repository for the wiki tooling. |
+React · TypeScript · Electron · SQLite
 
-*UnoraWiki is a fork of [the Unora community wiki](https://github.com/unora-project/unora-project.github.io). Forks keep their upstream credit.*
+[Explore the source](https://github.com/BuildWithRaymond/DAMerchant) · [Latest release](https://github.com/BuildWithRaymond/DAMerchant/releases/latest)
 
-## How I work
+### [DAOrganizer](https://github.com/BuildWithRaymond/DAOrganizer)
 
-Make the workflow clear. Keep the controls understandable. Show what happened. Keep improving the details.
+<a href="https://github.com/BuildWithRaymond/DAOrganizer"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/da-organizer.svg" width="460" alt="DAOrganizer / Inventory and transfers" /></a>
+
+A Windows companion for searching a collection across characters, organizing inventory, and reviewing items held in banks.
+
+C# · Avalonia · .NET · SQLite
+
+[Explore the source](https://github.com/BuildWithRaymond/DAOrganizer) · [Latest release](https://github.com/BuildWithRaymond/DAOrganizer/releases/latest)
+
+### More from the workshop
+
+- **[DAQuester](https://github.com/BuildWithRaymond/DAQuester)** — quest planning and tracking. [Latest release](https://github.com/BuildWithRaymond/DAQuester/releases/latest).
+- **[DASpeaker](https://github.com/BuildWithRaymond/DASpeaker)** — speech preparation and communication tooling. [Latest release](https://github.com/BuildWithRaymond/DASpeaker/releases/latest).
+- **[DASB](https://github.com/BuildWithRaymond/DASB)** — protocol and developer tooling.
+- **[UnoraWiki](https://github.com/BuildWithRaymond/UnoraWiki)** — a fork of the [Unora community wiki](https://github.com/unora-project/unora-project.github.io), with upstream credit retained.
+- **[unora-wiki-svelte](https://github.com/BuildWithRaymond/unora-wiki-svelte)** — Unora wiki frontend repository.
+- **[sveltia-cms-auth](https://github.com/BuildWithRaymond/sveltia-cms-auth)** — CMS authentication repository for the wiki tooling.
+
+## Tools I work with
+
+C# / .NET · Avalonia · TypeScript · React / Next.js · Node.js · SQLite
 
 ## Built in public
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/activity.svg" width="960" alt="Original public repository and star totals, with primary language counts" />
-</p>
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/activity-mobile.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/activity.svg" width="960" alt="Original public repository and star totals, with primary language counts. Refreshed daily from public GitHub metadata." />
+</picture>
 
-<sub>Public repositories only. Forks and this profile repository are excluded. Languages are counted by repository, not by lines of code. Refreshed daily.</sub>
+Public repositories only. Forks and this profile repository are excluded. Languages are counted by repository, not by lines of code. Artwork refreshes daily from GitHub's public metadata.
 
-<br /><br />
+<a href="https://github.com/BuildWithRaymond?tab=repositories"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/footer.svg" width="960" alt="Make something useful. Explore the repositories." /></a>
 
-<p align="center">
-  <a href="https://github.com/BuildWithRaymond?tab=repositories"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/footer.svg" width="960" alt="Make something useful. Have an idea or found a bug? Start a conversation in a project issue." /></a>
-</p>

@@ -1,13 +1,20 @@
 # Profile maintenance
 
-The README is the public profile. All artwork is original, standalone SVG in `assets/`. No game sprites, captures, credentials or private source files are included.
+The README is the public profile. Artwork is standalone SVG in `assets/`, including the supplied Hernbrode identity. No game sprites, captures, credentials or private source files are included.
 
 - Edit `README.md` for the introduction and links.
-- Edit `assets/header.svg` for the banner, `assets/now.svg` for rotating phrases, or a project SVG for its card.
-- Motion groups respect reduced-motion preferences. Essential text and icons remain visible.
-- The workflow refreshes `assets/activity.svg` daily using public repository metadata. No personal access token is needed.
-- Totals exclude forks and the profile repository. Language counts measure repositories, not lines of code.
+- Static artwork is generated manually by `scripts/render_brand_assets.py`. Update its layout/copy, then regenerate instead of editing output that a later manual run will overwrite. From the Agency workspace, run `python github-profile/scripts/render_brand_assets.py --brand-dir public/brand`; from another checkout, pass the directory containing the approved identity files.
+- The exact supplied Hernbrode wordmark and H monogram belong to the owner's supplied identity. The generator copies the existing outlined geometry from `logo-cream.svg`, `mark-cream.svg`, and `mark-black.svg` without redrawing or replacing it. Supply those approved source files when regenerating; they are not fetched from another service.
+- Header, mobile header, service strip, technology list, project artwork and closing artwork are static. No rotating phrases, motion groups, or animation dependencies are present.
+- The workflow refreshes `assets/activity.svg` and `assets/activity-mobile.svg` daily from the same public repository summary and UTC date. Both generated files are committed together. No personal access token is needed.
+- Totals exclude private repositories, records without confirmed public visibility, forks, and the profile repository. Language counts measure repositories, not lines of code. Stars are stars across those original public repositories, not client or business results.
+- Keep activity rendering in the same brand system: ink `#0B0B0B`, charcoal `#1F1F1F`, cream `#F3EEE7`, restrained orange `#FF6A00`, and muted text `#BDB6AD`. Daily updates use `scripts/update_activity.py`; editing only the generated SVGs will be overwritten. The 480 px mobile variant uses at least 22 px labels and 64 px counts so it remains readable when GitHub scales it to a narrow article column. README `<picture>` selects the compact variant; the desktop contact sheet keeps the wide variant.
 - Profile changes and manual workflow runs render a static contact sheet for review in the workflow log.
+- The preview canvas height is calculated from all rendered assets, including the tallest card in each row. The existing `SVG_PREVIEW_BASE64:` log output is preserved. To also save a local PNG, run `python3 scripts/render_preview.py --output /tmp/profile-preview.png` in an environment with CairoSVG and Pillow. The workflow installs these dependencies on Ubuntu; Windows also needs Cairo's native runtime.
+- README image sources may use relative `assets/...` paths or raw GitHub URLs belonging to this profile on `main` or a full commit SHA. Validation checks every `<img>` and `<picture><source srcset>` candidate, resolves only files within local `assets/`, and never fetches remote resources.
 - Run `python3 -m unittest discover -s tests -v` and `python3 scripts/validate_profile.py` before publishing edits.
 
-The portfolio remains separate and private at `BuildWithRaymond/BuildWithRaymond-portfolio`. Update any existing portfolio clones or deployment integrations to that URL. The original name now belongs to this profile.
+Keep upstream attribution for forked community projects. Do not publish private repository names, private implementation details, credentials, or unsupported business claims in this profile. A private portfolio remains separate from the public profile.
+
+The intended website domain is omitted from public links until the owner confirms that the website is live and the destination is correct. Do not infer domain ownership or a working mailbox from the brand name.
+

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="500" viewBox="0 0 480 500" role="img" aria-labelledby="header-mobile-title header-mobile-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<title id="header-mobile-title">Raymond Hernbrode — A higher standard online.</title>
+<desc id="header-mobile-desc">Mobile composition of the supplied Hernbrode identity, Raymond Hernbrode&#x27;s name, and the brand line.</desc>
+<rect width="480" height="500" fill="#0B0B0B"/>
+<g transform="translate(28 30) scale(0.326370757)"><g fill="#F3EEE7"><g><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g><g transform="translate(150 10)"><path d="M0 2H21V39H57V2H78V95H57V58H21V95H0Z" fill-rule="evenodd" /><path d="M35.5 0C14 0 0 15 0 36C0 57 14 72 36 72C52 72 65 64 70 50L50 48C47 54 43 57 36 57C26 57 20 52 19 43H71V36C71 14 57 0 35.5 0Z M20 28C23 20 29 17 36 17C44 17 50 21 52 28Z" fill-rule="evenodd" transform="translate(82 25)" /><path d="M0 1H19V11C24 3 32 0 43 0V19C29 18 21 26 21 39V69H0Z" fill-rule="evenodd" transform="translate(157 26)" /><path d="M0 2H20V11C25 4 32 0 42 0C58 0 67 11 67 29V70H47V34C47 23 43 18 35 18C26 18 20 25 20 36V70H0Z" fill-rule="evenodd" transform="translate(203 25)" /><path d="M0 0H20V35C26 28 34 25 44 25C61 25 73 40 73 61C73 82 61 97 43 97C33 97 26 94 20 87V95H0Z M54.5 61 C54.5 71.217 46.665 79.5 37 79.5 C27.335 79.5 19.5 71.217 19.5 61 C19.5 50.783 27.335 42.5 37 42.5 C46.665 42.5 54.5 50.783 54.5 61 Z" fill-rule="evenodd" transform="translate(276 0)" /><path d="M0 1H19V11C24 3 32 0 43 0V19C29 18 21 26 21 39V69H0Z" fill-rule="evenodd" transform="translate(353 26)" /><path d="M71 36 C71 55.882 55.106 72 35.5 72 C15.894 72 0 55.882 0 36 C0 16.118 15.894 0 35.5 0 C55.106 0 71 16.118 71 36 Z M53 36 C53 46.217 45.165 54.5 35.5 54.5 C25.835 54.5 18 46.217 18 36 C18 25.783 25.835 17.5 35.5 17.5 C45.165 17.5 53 25.783 53 36 Z" fill-rule="evenodd" transform="translate(396 25)" /><path d="M0 0H20V35C26 28 34 25 44 25C61 25 73 40 73 61C73 82 61 97 43 97C33 97 26 94 20 87V95H0Z M54.5 61 C54.5 71.217 46.665 79.5 37 79.5 C27.335 79.5 19.5 71.217 19.5 61 C19.5 50.783 27.335 42.5 37 42.5 C46.665 42.5 54.5 50.783 54.5 61 Z" fill-rule="evenodd" transform="translate(543 0) scale(-1 1)" /><path d="M35.5 0C14 0 0 15 0 36C0 57 14 72 36 72C52 72 65 64 70 50L50 48C47 54 43 57 36 57C26 57 20 52 19 43H71V36C71 14 57 0 35.5 0Z M20 28C23 20 29 17 36 17C44 17 50 21 52 28Z" fill-rule="evenodd" transform="translate(545 25)" /></g></g>
+</g>
+<path d="M28 102H452" fill="none" stroke="#F3EEE7" stroke-opacity=".2"/>
+<text x="26" y="175" fill="#F3EEE7" font-size="64" font-weight="600" letter-spacing="-3">Raymond</text>
+<text x="26" y="246" fill="#F3EEE7" font-size="64" font-weight="600" letter-spacing="-3">Hernbrode.</text>
+<text x="28" y="317" fill="#F3EEE7" font-size="37" font-weight="400" letter-spacing="-1.2">A higher standard</text>
+<text x="28" y="360" fill="#F3EEE7" font-size="37" font-weight="400" letter-spacing="-1.2">online.</text>
+<rect x="344" y="386" width="108" height="114" fill="#F3EEE7"/>
+<g transform="translate(369 406) scale(0.508771930)"><g fill="#0B0B0B"><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g>
+</g>
+<rect x="28" y="446" width="66" height="6" fill="#FF6A00"/>
+<rect x=".5" y=".5" width="479" height="499" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
+</svg>

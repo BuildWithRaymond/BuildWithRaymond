@@ -1,26 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="460" height="230" viewBox="0 0 460 230" role="img" aria-labelledby="title desc">
-<title id="title">DAMerchant — Set up shop. Keep it connected.</title><desc id="desc">Original Dark Ages themed the merchant's counter artwork. Trading tools with AislingExchange integration. TypeScript / Windows</desc>
-<defs>
-<linearGradient id="stone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18251f"/><stop offset=".46" stop-color="#101612"/><stop offset="1" stop-color="#090c0b"/></linearGradient>
-<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9a783c"/><stop offset=".33" stop-color="#f0d694"/><stop offset=".67" stop-color="#b88c43"/><stop offset="1" stop-color="#e6c67b"/></linearGradient>
-<linearGradient id="lettergold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0c6"/><stop offset=".55" stop-color="#e1c485"/><stop offset="1" stop-color="#b9914f"/></linearGradient>
-<radialGradient id="aura"><stop stop-color="#cba45a" stop-opacity=".23"/><stop offset="1" stop-color="#cba45a" stop-opacity="0"/></radialGradient>
-<radialGradient id="moonlight"><stop stop-color="#689a85" stop-opacity=".26"/><stop offset="1" stop-color="#689a85" stop-opacity="0"/></radialGradient>
-<pattern id="grain" width="23" height="23" patternUnits="userSpaceOnUse"><path d="M0 6 H6 M18 17 H23 M11 0 V3" stroke="#f2d891" stroke-opacity=".032" stroke-width=".6"/></pattern>
-</defs>
-<style>.title{font-family:'Palatino Linotype','Book Antiqua',Georgia,serif}.body{font-family:'Segoe UI',Arial,sans-serif}.small{font-family:Consolas,'Courier New',monospace}@media(prefers-reduced-motion:reduce){.motion{display:none}}</style>
-
-<path d="M14 .8 H446 L459.2 14 V216 L446 229.2 H14 L.8 216 V14 Z" fill="url(#stone)" stroke="url(#gold)" stroke-width="1.2"/><path d="M18 8 H442 L452 18 V212 L442 222 H18 L8 212 V18 Z" fill="url(#grain)" stroke="#a78243" stroke-opacity=".3"/><path d="M24 16 H42 M16 24 V42 M418 16 H436 M444 24 V42 M16 188 V206 M24 214 H42 M418 214 H436 M444 188 V206" fill="none" stroke="#c8a867" stroke-opacity=".7"/>
-<circle cx="398" cy="74" r="59" fill="url(#aura)"/>
-<text x="28" y="35" class="small" fill="#b49c67" font-size="8.8" letter-spacing="1.3">THE MERCHANT'S COUNTER</text>
-<text x="26" y="79" class="title" fill="url(#lettergold)" font-size="30" font-weight="bold">DAMerchant</text>
-<text x="28" y="116" class="body" fill="#e1d9c0" font-size="14">Set up shop. Keep it connected.</text>
-<text x="28" y="140" class="body" fill="#a8b19e" font-size="12">Trading tools with AislingExchange integration.</text>
-<path d="M28 165 H191 M269 165 H432" stroke="#8c6a36" stroke-opacity=".5"/>
-<g transform="translate(230 165) scale(0.43)" fill="none" stroke="url(#gold)" stroke-width="1.3" opacity=".8"><path d="M0 -15 C14 -15 21 -3 14 8 C7 19 -7 19 -14 8 C-21 -3 -14 -15 0 -15 Z M-15 0 C-15 -14 -3 -21 8 -14 C19 -7 19 7 8 14 C-3 21 -15 14 -15 0 Z"/><path d="M-5 -5 H5 V5 H-5 Z" stroke="#f0d694" stroke-width=".7"/></g>
-<text x="28" y="204" class="small" fill="#a99872" font-size="10">TypeScript / Windows</text>
-<path d="M416 203 H428 M423 198 L428 203 L423 208" fill="none" stroke="#d9bc79"/>
-<g transform="translate(390 77)" fill="none" stroke="url(#gold)" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"><path d="M0 -31 V22 M-29 -15 H29 M-13 29 H13 M-22 32 H22" stroke-width="2.3"/><path d="M0 -31 L4 -25 L0 -19 L-4 -25 Z" fill="#e3c67d"/><path d="M-23 -15 L-35 9 H-11 Z M23 -15 L11 9 H35 Z" stroke="#aa955b" fill="#20241a"/><path d="M-35 9 Q-23 22 -11 9 M11 9 Q23 22 35 9" fill="#7b5b2f"/><circle cx="16" cy="24" r="8" fill="#b18c43"/><circle cx="16" cy="24" r="5" stroke="#f0d188" stroke-width=".8"/><path d="M14 21 L18 27 M18 21 L14 27" stroke="#f1d391" stroke-width=".8"/><g class="motion"><g transform="translate(-18 29)"><ellipse rx="7" ry="9" fill="#d5af60" stroke="#f7d98a"><animate attributeName="rx" values="7;2;7" dur="4s" repeatCount="indefinite"/></ellipse><path d="M0 -4 V4" stroke="#78572b"/></g></g></g>
-<g class="motion"><path d="M28 218 H432" stroke="#d8b965" stroke-width=".9" stroke-dasharray="24 808" opacity=".5"><animate attributeName="stroke-dashoffset" values="24;-404" dur="12s" repeatCount="indefinite"/></path></g>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="da-merchant-title da-merchant-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<title id="da-merchant-title">DAMerchant — Set up shop. Keep it connected.</title>
+<desc id="da-merchant-desc">Trading tools with AislingExchange integration. TypeScript / Windows. Static Hernbrode profile project header; not a replacement application identity.</desc>
+<rect width="460" height="220" fill="#0B0B0B"/>
+<rect x="28" y="28" width="46" height="5" fill="#FF6A00"/>
+<text x="25" y="107" fill="#F3EEE7" font-size="53" font-weight="600" letter-spacing="-2.4">DAMerchant</text>
+<text x="28" y="153" fill="#F3EEE7" font-size="25" font-weight="400" letter-spacing="-.5">Trading &amp; exchange</text>
+<path d="M28 188H432" fill="none" stroke="#F3EEE7" stroke-opacity=".2"/>
+<rect x="426" y="28" width="6" height="22" fill="#FF6A00"/>
+<rect x=".5" y=".5" width="459" height="219" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
 </svg>
