@@ -61,12 +61,17 @@ def local_asset_path(source, root=ROOT):
 
 
 def validate_profile(root=ROOT):
-    readme = (root / "README.md").read_text(encoding="utf-8")
-    for excluded in ["Chaos.Client", "github.com/BuildWithRaymond/NewAges", "github.com/BuildWithRaymond/da)"]:
-        assert excluded not in readme, "An excluded project must not appear in the public profile"
-    parser = ImageReferences()
-    parser.feed(readme)
-    references = parser.sources + re.findall(r"!\[[^\]]*\]\(\s*<?([^\s)>]+)>?(?:\s+\"[^\"]*\")?\s*\)", readme)
+    references = []
+    pages = [root / "README.md"]
+    if (root / "STATIC.md").is_file():
+        pages.append(root / "STATIC.md")
+    for page in pages:
+        readme = page.read_text(encoding="utf-8")
+        for excluded in ["Chaos.Client", "github.com/BuildWithRaymond/NewAges", "github.com/BuildWithRaymond/da)"]:
+            assert excluded not in readme, "An excluded project must not appear in the public profile"
+        parser = ImageReferences()
+        parser.feed(readme)
+        references.extend(parser.sources + re.findall(r"!\[[^\]]*\]\(\s*<?([^\s)>]+)>?(?:\s+\"[^\"]*\")?\s*\)", readme))
     assert references, "README must reference its profile artwork"
     for source in references:
         local_asset_path(source, root)
@@ -90,4 +95,4 @@ def validate_profile(root=ROOT):
 
 
 if __name__ == "__main__":
-    print(f"Validated {validate_profile()} README image references and all SVGs")
+    print(f"Validated {validate_profile()} profile image references and all SVGs")

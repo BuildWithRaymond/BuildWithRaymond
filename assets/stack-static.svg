@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="stack-art" width="960" height="240" viewBox="0 0 960 240" role="img" aria-labelledby="stack-title stack-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<title id="stack-title">C#, .NET, Avalonia, TypeScript, React, Next.js, Node.js, and SQLite — Static version</title>
+<desc id="stack-desc">Motion-free static artwork. All text, supplied identity, and category drawings are shown in their complete resting state.</desc>
+<rect width="960" height="240" fill="#0B0B0B" />
+<path d="M480 28V212" fill="none" stroke="#F3EEE7" stroke-opacity=".2" />
+<text x="44" y="74" fill="#F3EEE7" font-size="40" font-weight="550" letter-spacing="-1">C# / .NET</text>
+<text x="524" y="74" fill="#F3EEE7" font-size="40" font-weight="550" letter-spacing="-1">Avalonia</text>
+<path d="M44 98H436" fill="none" stroke="#F3EEE7" stroke-opacity=".2" />
+<path d="M524 98H916" fill="none" stroke="#F3EEE7" stroke-opacity=".2" />
+<text x="44" y="144" fill="#F3EEE7" font-size="40" font-weight="550" letter-spacing="-1">TypeScript</text>
+<text x="524" y="144" fill="#F3EEE7" font-size="40" font-weight="550" letter-spacing="-1">React / Next.js</text>
+<path d="M44 168H436" fill="none" stroke="#F3EEE7" stroke-opacity=".2" />
+<path d="M524 168H916" fill="none" stroke="#F3EEE7" stroke-opacity=".2" />
+<text x="44" y="214" fill="#F3EEE7" font-size="40" font-weight="550" letter-spacing="-1">Node.js</text>
+<text x="524" y="214" fill="#F3EEE7" font-size="40" font-weight="550" letter-spacing="-1">SQLite</text>
+<path d="M18 60H26" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw stack-top" d="M18 60H26" pathLength="100" fill="none" stroke="#FF6A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M18 130H26" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw stack-middle" d="M18 130H26" pathLength="100" fill="none" stroke="#FF6A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M18 200H26" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw stack-bottom" d="M18 200H26" pathLength="100" fill="none" stroke="#FF6A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<rect x=".5" y=".5" width="959" height="239" fill="none" stroke="#F3EEE7" stroke-opacity=".18" />
+</svg>

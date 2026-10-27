@@ -6,8 +6,9 @@ Run from the Agency workspace:
 For another checkout, pass the directory containing the approved logo-cream.svg
 and mark-cream.svg files. This script is not run by the activity
 workflow. Each output is a standalone SVG without external resources.
-Each authored construction plays once and settles. Reduced motion returns
-complete static art. Supplied identity geometry and all text stay stationary.
+Short authored passes repeat with quiet holds and invisible resets. Reduced
+motion and generated *-static.svg versions show complete static artwork.
+Supplied identity geometry and all text stay stationary.
 """
 
 import argparse
@@ -66,18 +67,26 @@ def motion_style(name, rules):
     )
 
 
-def construction_motion(name, actions):
-    """Each action owns its duration and ease; no timeline knots or reversal."""
+def construction_motion(name, actions, cycle=3.8):
+    """Forward draws hold, fade, then reset invisibly over a complete track."""
     rules = [f'#{name}-art .draw {{stroke-dasharray: 100 100;}}']
-    for class_name, duration, delay, ease in actions:
+    for index, (class_name, duration, delay, ease) in enumerate(actions):
+        finish = min(48, 4 + duration / cycle * 100)
+        keyframes = f"{name}-draw-{index}"
         rules.append(
-            f'#{name}-art .{class_name} {{animation: {name}-draw '
-            f'{duration}s {ease} {delay}s 1 both;}}'
+            f'#{name}-art .{class_name} {{animation: {keyframes} '
+            f'{cycle}s linear {delay}s infinite both;}}'
         )
-    rules.append(
-        f'@keyframes {name}-draw {{from {{stroke-dashoffset: 100;}} '
-        'to {stroke-dashoffset: 0;}}'
-    )
+        rules.append(
+            f'@keyframes {keyframes} {{'
+            '0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}'
+            f'4% {{stroke-dashoffset: 100; opacity: 1; animation-timing-function: {ease};}}'
+            f'{finish:.3f}% {{stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}}'
+            '57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}'
+            '72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}'
+            '73%,100% {stroke-dashoffset: 100; opacity: 0;}'
+            '}'
+        )
     return motion_style(name, '\n'.join(rules))
 
 
@@ -93,26 +102,37 @@ def drawn_path(d, action, color=ORANGE, width=2, track_opacity=".18"):
     )
 
 
-def header_registration(mobile=False):
-    # Rise/run is the supplied H bridge's -39/77. Its geometry is never changed.
-    paths = (
-        ["M350 452L444 404.3896", "M346.4 444.9L353.6 459.1", "M440.4 397.3L447.6 411.5"]
-        if mobile else
-        ["M710 230.58L940 114.0865", "M706.4 223.5L713.6 237.7", "M936.4 107L943.6 121.2"]
+def header_accent(name, mobile=False):
+    """The clip is entirely below copy and left of the protected logo panel."""
+    x, y, width, height = (28, 396, 278, 68) if mobile else (44, 366, 576, 36)
+    orange = "M36 438L84 413.6883" if mobile else "M52 394L100 369.6883"
+    companion = "M36 430L64 415.8182" if mobile else "M52 386L80 371.8182"
+    return (
+        f'<defs><clipPath id="{name}-accent-clip"><rect x="{x}" y="{y}" '
+        f'width="{width}" height="{height}"/></clipPath></defs>'
+        f'<g clip-path="url(#{name}-accent-clip)">'
+        f'<path class="motion accent-companion" d="{companion}" fill="none" '
+        f'stroke="{MUTED}" stroke-width="2"/>'
+        f'<path class="motion accent-pass" d="{orange}" fill="none" '
+        f'stroke="{ORANGE}" stroke-width="6"/>'
+        '</g>'
     )
-    return [
-        drawn_path(paths[0], "register-pass", width=1.7),
-        drawn_path(paths[1], "register-start", color=MUTED, width=1.5),
-        drawn_path(paths[2], "register-finish", color=MUTED, width=1.5),
-    ]
 
 
-def header_motion(name):
-    return construction_motion(name, [
-        ("register-pass", 1.18, .16, "cubic-bezier(.22,.68,0,1)"),
-        ("register-start", .42, 1.38, "cubic-bezier(.16,1,.3,1)"),
-        ("register-finish", .42, 1.50, "cubic-bezier(.16,1,.3,1)"),
-    ])
+def header_motion(name, width, repeat=True):
+    """A forward pass exits the accent clip before any reset. No return trip."""
+    travel = width + 80
+    count = "infinite" if repeat else "1"
+    duration = 3.8 if repeat else 1.62
+    end = "40%,100%" if repeat else "100%"
+    companion_end = "44%,100%" if repeat else "100%"
+    companion_duration = 3.8 if repeat else 1.70
+    return motion_style(name, f"""
+#{name}-art .accent-pass {{animation: {name}-pass {duration}s cubic-bezier(.35,0,.2,1) .12s {count} both; transform-box: view-box;}}
+#{name}-art .accent-companion {{animation: {name}-companion {companion_duration}s cubic-bezier(.35,0,.2,1) .24s {count} both; transform-box: view-box;}}
+@keyframes {name}-pass {{0% {{transform: translateX(-110px);}} {end} {{transform: translateX({travel}px);}}}}
+@keyframes {name}-companion {{0% {{transform: translateX(-110px);}} {companion_end} {{transform: translateX({travel}px);}}}}
+""")
 
 
 def category_gesture(name):
@@ -158,7 +178,28 @@ def category_gesture(name):
         action = f"gesture-{index}"
         paths.append(drawn_path(d, action, color=color, width=2.2))
         actions.append((action, duration, delay, ease))
-    return paths, construction_motion(name, actions)
+    cycle = {"da-organizer": 3.6, "da-merchant": 3.8, "da-quester": 4.0,
+             "da-speaker": 3.6, "da-dasb": 3.8, "da-wiki": 4.0}[name]
+    return paths, construction_motion(name, actions, cycle=cycle)
+
+
+def static_copy(source):
+    """Removing CSS reveals complete base paths, without duplicating artwork."""
+    root = ET.fromstring(source)
+    for parent in root.iter():
+        for child in list(parent):
+            if child.tag.rsplit("}", 1)[-1] == "style":
+                parent.remove(child)
+    title = root.find(f"{{{NS}}}title")
+    description = root.find(f"{{{NS}}}desc")
+    if title is not None:
+        title.text = (title.text or "") + " — Static version"
+    if description is not None:
+        description.text = (
+            "Motion-free static artwork. All text, supplied identity, and category "
+            "drawings are shown in their complete resting state."
+        )
+    return ET.tostring(root, encoding="unicode") + "\n"
 
 
 def svg(name, width, height, title, description, artwork, background=INK, motion=""):
@@ -186,7 +227,7 @@ def render(brand_dir, output):
     assets["header.svg"] = svg(
         "header", 960, 420,
         "Raymond Hernbrode — A higher standard online.",
-        "Raymond Hernbrode and the supplied outlined Hernbrode identity. One precise diagonal registration draws along the stationary H's bridge angle and settles; reduced motion preserves complete artwork.",
+        "Raymond Hernbrode and the supplied outlined Hernbrode identity. Orange accents move forward in a separate area below the copy, entirely clear of both stationary logos.",
         [
             f'<rect x="688" width="272" height="420" fill="{CHARCOAL}"/>',
             identity(brand_dir, "logo-cream.svg", 44, 38, 246),
@@ -194,11 +235,10 @@ def render(brand_dir, output):
             text(40, 190, "Raymond", 72, weight=600, spacing="-3.4"),
             text(40, 269, "Hernbrode.", 72, weight=600, spacing="-3.4"),
             text(44, 341, "A higher standard online.", 39, spacing="-1.3"),
-            f'<rect x="44" y="378" width="72" height="6" fill="{ORANGE}"/>',
-            *header_registration(),
+            header_accent("header"),
             identity(brand_dir, "mark-cream.svg", 748, 116, 152),
             f'<rect x="688" y="412" width="272" height="8" fill="{ORANGE}"/>',
-        ], motion=header_motion("header"),
+        ], motion=header_motion("header", 576),
     )
     assets["header-mobile.svg"] = svg(
         "header-mobile", 480, 500,
@@ -212,10 +252,9 @@ def render(brand_dir, output):
             text(28, 317, "A higher standard", 37, spacing="-1.2"),
             text(28, 360, "online.", 37, spacing="-1.2"),
             f'<rect x="344" y="386" width="108" height="114" fill="{CHARCOAL}"/>',
-            *header_registration(mobile=True),
+            header_accent("header-mobile", mobile=True),
             identity(brand_dir, "mark-cream.svg", 369, 406, 58),
-            f'<rect x="28" y="446" width="66" height="6" fill="{ORANGE}"/>',
-        ], motion=header_motion("header-mobile"),
+        ], motion=header_motion("header-mobile", 278),
     )
     assets["now.svg"] = svg(
         "now", 960, 130,
@@ -228,7 +267,7 @@ def render(brand_dir, output):
             drawn_path("M44 112H184", "area-rule", width=2),
         ], background=CHARCOAL, motion=construction_motion("now", [
             ("area-rule", .72, .12, "cubic-bezier(.22,.7,.2,1)"),
-        ]),
+        ], cycle=4.2),
     )
     assets["stack.svg"] = svg(
         "stack", 960, 240,
@@ -267,7 +306,7 @@ def render(brand_dir, output):
             drawn_path("M590 42V86", "workshop-rule", width=2),
         ], background=CHARCOAL, motion=construction_motion("da-workshop", [
             ("workshop-rule", .52, .18, "cubic-bezier(.22,.7,.2,1)"),
-        ]),
+        ], cycle=4.0),
     )
     projects = [
         ("da-organizer", "DAOrganizer", "Inventory & transfers", "Your collection, brought together.",
@@ -288,7 +327,7 @@ def render(brand_dir, output):
         gesture, motion = category_gesture(name)
         assets[name + ".svg"] = svg(
             name, 460, 220, f"{title} — {original_line}",
-            f"{description} A small monoline category drawing constructs once and settles beside the stationary project name. It is decorative artwork, not an application identity. Reduced motion shows the complete drawing.",
+            f"{description} A small monoline category drawing repeats a forward construction and gentle fade over a complete static track. It is decorative artwork, not an application identity. Reduced motion shows the complete drawing.",
             [
                 f'<rect x="28" y="28" width="46" height="5" fill="{ORANGE}"/>',
                 text(25, 107, title, 53, fill=foreground, weight=600, spacing="-2.4"),
@@ -300,7 +339,7 @@ def render(brand_dir, output):
     assets["footer.svg"] = svg(
         "footer", 960, 176,
         "Make something useful. Explore Raymond's repositories.",
-        "An invitation to explore Raymond Hernbrode's public repositories. The arrow shaft and head construct once, while the supplied mark, words, and orange rule remain stationary.",
+        "An invitation to explore Raymond Hernbrode's public repositories. The arrow shaft and head repeat a short forward construction over a static track, while the supplied mark, words, and orange rule remain stationary.",
         [
             identity(brand_dir, "mark-cream.svg", 44, 51, 60),
             text(140, 89, "Make something useful.", 52, weight=600, spacing="-2"),
@@ -311,11 +350,14 @@ def render(brand_dir, output):
         ], background=CHARCOAL, motion=construction_motion("footer", [
             ("arrow-shaft", .24, .08, "cubic-bezier(.2,.7,.2,1)"),
             ("arrow-head", .24, .20, "cubic-bezier(.16,1,.3,1)"),
-        ]),
+        ], cycle=3.4),
     )
     for filename, content in assets.items():
         (output / filename).write_text(content, encoding="utf-8")
-    print(f"Rendered {len(assets)} animated SVG assets with reduced-motion fallbacks to {output}")
+        (output / filename.replace(".svg", "-static.svg")).write_text(
+            static_copy(content), encoding="utf-8"
+        )
+    print(f"Rendered {len(assets)} repeating SVG assets and matching static versions to {output}")
 
 
 if __name__ == "__main__":

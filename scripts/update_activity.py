@@ -1,6 +1,7 @@
 """Refresh the profile SVG using public GitHub repository metadata."""
 import json
 import os
+import xml.etree.ElementTree as ET
 from collections import Counter
 from datetime import datetime, timezone
 from html import escape
@@ -36,16 +37,22 @@ def summarize(repositories, username):
 
 
 def accent_motion(x1, x2, y):
-    # Construct the divider once, leaving the permanent orange mark untouched.
+    # Loop only the decorative divider; reset its draw state while fully hidden.
     # Default SVG attributes are the complete final state if CSS is unavailable.
     return f'''<style>
-.activity-construction{{animation:activity-build 750ms cubic-bezier(.22,1,.36,1) 180ms 1 both}}
-@keyframes activity-build{{from{{stroke-dashoffset:1}}to{{stroke-dashoffset:0}}}}
+.activity-construction{{animation:activity-build 4.2s cubic-bezier(.22,1,.36,1) infinite}}
+@keyframes activity-build{{
+0%,8%{{stroke-dashoffset:1;opacity:0}}
+12%{{stroke-dashoffset:1;opacity:.4}}
+32%,62%{{stroke-dashoffset:0;opacity:.4}}
+76%{{stroke-dashoffset:0;opacity:0}}
+77%,100%{{stroke-dashoffset:1;opacity:0}}
+}}
 @media(prefers-reduced-motion:reduce){{
-.activity-construction{{animation:none!important;stroke-dashoffset:0!important}}
+.activity-construction{{animation:none!important;stroke-dashoffset:0!important;opacity:.4!important}}
 }}
 </style>
-<path class="activity-construction" d="M{x1 + 48} {y} H{x2}" pathLength="1" fill="none" stroke="#F3EEE7" stroke-width="1" stroke-dasharray="1 1" stroke-dashoffset="0" opacity=".24" aria-hidden="true"/>'''
+<path class="activity-construction" d="M{x1 + 48} {y} H{x2}" pathLength="1" fill="none" stroke="#F3EEE7" stroke-width="1.5" stroke-dasharray="1 1" stroke-dashoffset="0" opacity=".4" aria-hidden="true"/>'''
 
 
 def render(summary, updated_date):
@@ -113,11 +120,25 @@ def render_mobile(summary, updated_date):
 '''
 
 
+def static_svg(document):
+    """Remove motion without changing the complete default artwork or data."""
+    root = ET.fromstring(document)
+    motion_tags = {"style", "animate", "animateTransform", "animateMotion", "animateColor", "set"}
+    for parent in root.iter():
+        for child in list(parent):
+            if child.tag.rsplit("}", 1)[-1] in motion_tags:
+                parent.remove(child)
+    ET.register_namespace("", "http://www.w3.org/2000/svg")
+    return ET.tostring(root, encoding="unicode") + "\n"
+
+
 def write_activity(summary, updated_date, destination):
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=True)
     for name, renderer in [("activity.svg", render), ("activity-mobile.svg", render_mobile)]:
-        (destination / name).write_text(renderer(summary, updated_date), encoding="utf-8")
+        document = renderer(summary, updated_date)
+        (destination / name).write_text(document, encoding="utf-8")
+        (destination / name.replace(".svg", "-static.svg")).write_text(static_svg(document), encoding="utf-8")
 
 
 def main():

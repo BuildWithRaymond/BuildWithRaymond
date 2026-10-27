@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="da-wiki-art" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="da-wiki-title da-wiki-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<title id="da-wiki-title">UnoraWiki — Knowledge worth keeping together. — Static version</title>
+<desc id="da-wiki-desc">Motion-free static artwork. All text, supplied identity, and category drawings are shown in their complete resting state.</desc>
+<rect width="460" height="220" fill="#1F1F1F" />
+<rect x="28" y="28" width="46" height="5" fill="#FF6A00" />
+<text x="25" y="107" fill="#F3EEE7" font-size="53" font-weight="600" letter-spacing="-2.4">UnoraWiki</text>
+<text x="28" y="153" fill="#F3EEE7" font-size="25" font-weight="400" letter-spacing="-.5">Community wiki / Fork</text>
+<path d="M28 188H432" fill="none" stroke="#F3EEE7" stroke-opacity=".2" />
+<path d="M386 32V62H414" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw gesture-0" d="M386 32V62H414" pathLength="100" fill="none" stroke="#BDB6AD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M391 24H414L423 33V57H391Z M414 24V33H423" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw gesture-1" d="M391 24H414L423 33V57H391Z M414 24V33H423" pathLength="100" fill="none" stroke="#BDB6AD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M398 41H416M398 48H409" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw gesture-2" d="M398 41H416M398 48H409" pathLength="100" fill="none" stroke="#FF6A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+<rect x=".5" y=".5" width="459" height="219" fill="none" stroke="#F3EEE7" stroke-opacity=".18" />
+</svg>

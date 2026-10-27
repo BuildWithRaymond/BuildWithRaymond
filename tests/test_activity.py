@@ -137,6 +137,59 @@ class ActivityTests(unittest.TestCase):
         self.assertEqual(decoder.open.call_args.args[0].getvalue(), b"rendered-png")
         picture.convert.assert_called_once_with("RGBA")
 
+    def test_static_activity_variants_match_data_without_animation(self):
+        self.assertTrue(callable(getattr(self.activity, "static_svg", None)), "Static activity output is required")
+        ns = "{http://www.w3.org/2000/svg}"
+        summary = {"projects": 7, "stars": 4, "languages": [("C#", 4), ("TypeScript", 2), ("C++", 1)]}
+        with tempfile.TemporaryDirectory(prefix=".profile-test-", dir=Path(__file__).resolve().parent) as temporary:
+            destination = Path(temporary)
+            self.activity.write_activity(summary, "2026-10-27", destination)
+            self.assertEqual(len(list(destination.glob("*.svg"))), 4)
+            for name in ["activity", "activity-mobile"]:
+                animated = ET.parse(destination / (name + ".svg")).getroot()
+                static = ET.parse(destination / (name + "-static.svg")).getroot()
+                self.assertEqual(animated.find(ns + "title").text, static.find(ns + "title").text)
+                self.assertEqual(animated.find(ns + "desc").text, static.find(ns + "desc").text)
+                self.assertEqual([node.text for node in animated.iter(ns + "text")], [node.text for node in static.iter(ns + "text")])
+                tags = {node.tag.rsplit("}", 1)[-1] for node in static.iter()}
+                self.assertTrue(tags.isdisjoint({"style", "animate", "animateTransform", "animateMotion", "animateColor", "set"}))
+                self.assertNotIn("@keyframes", ET.tostring(static, encoding="unicode"))
+                accent = next(node for node in static.iter(ns + "path") if node.get("class") == "activity-construction")
+                self.assertEqual(accent.get("stroke-dashoffset"), "0")
+                self.assertEqual(accent.get("pathLength"), "1")
+                self.assertGreater(float(accent.get("opacity")), 0)
+
+    def test_static_profile_preserves_copy_fallbacks_and_return_link(self):
+        path = Path(__file__).parents[1] / "scripts" / "render_static_profile.py"
+        spec = importlib.util.spec_from_file_location("static_profile", path)
+        profile = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(profile)
+        native_copy = "## Selected projects\n\n[DAOrganizer](https://github.com/BuildWithRaymond/DAOrganizer) — a desktop companion.\n\n*Community projects keep their upstream credit.*\n"
+        readme = f'''<picture>
+  <source media="(prefers-reduced-motion: no-preference) and (max-width: 600px)" srcset="assets/header-mobile.svg" />
+  <source media="(prefers-reduced-motion: no-preference)" srcset="assets/header.svg" />
+  <source media="(max-width: 600px)" srcset="assets/header-mobile-static.svg" />
+  <img src="assets/header-static.svg" alt="Header" />
+</picture>
+<p><a href="{profile.STATIC_URL}">View without animation</a></p>
+{native_copy}
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="assets/da-organizer.svg" />
+  <img src="assets/da-organizer-static.svg" alt="DAOrganizer" />
+</picture>
+'''
+        result = profile.render_static(readme)
+        self.assertNotIn("prefers-reduced-motion", result)
+        self.assertEqual(result.count("<source"), 1)
+        self.assertIn('srcset="assets/header-mobile-static.svg"', result)
+        self.assertIn('src="assets/header-static.svg"', result)
+        self.assertIn('src="assets/da-organizer-static.svg"', result)
+        self.assertIn(native_copy, result)
+        self.assertIn(f'<a href="{profile.PROFILE_URL}">View animated profile</a>', result)
+        self.assertNotIn(profile.STATIC_URL, result)
+        self.assertNotIn("View without animation", result)
+        self.assertEqual(profile.render_static(result), result)
+
     def test_validator_accepts_local_and_profile_urls_without_path_escape(self):
         path = Path(__file__).parents[1] / "scripts" / "validate_profile.py"
         spec = importlib.util.spec_from_file_location("validator", path)
@@ -152,6 +205,12 @@ class ActivityTests(unittest.TestCase):
             (root / "README.md").write_text('<picture><source srcset="assets/sample.svg 1x, assets/sample.svg 2x"><img src="assets/sample.svg" alt="Sample"></picture>', encoding="utf-8")
             self.assertEqual(validator.validate_profile(root), 3)
             (root / "README.md").write_text('<picture><source srcset="https://example.org/hidden.svg"><img src="assets/sample.svg" alt="Sample"></picture>', encoding="utf-8")
+            with self.assertRaises(AssertionError):
+                validator.validate_profile(root)
+            (root / "README.md").write_text('<img src="assets/sample.svg" alt="Sample">', encoding="utf-8")
+            (root / "STATIC.md").write_text('<img src="assets/sample.svg" alt="Static sample">', encoding="utf-8")
+            self.assertEqual(validator.validate_profile(root), 2)
+            (root / "STATIC.md").write_text('<img src="https://example.org/untrusted.svg" alt="Untrusted">', encoding="utf-8")
             with self.assertRaises(AssertionError):
                 validator.validate_profile(root)
             for source in ["assets/sample.svg", "./assets/sample.svg",

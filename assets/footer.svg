@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="footer-art" width="960" height="176" viewBox="0 0 960 176" role="img" aria-labelledby="footer-title footer-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="footer-title">Make something useful. Explore Raymond&#x27;s repositories.</title>
-<desc id="footer-desc">An invitation to explore Raymond Hernbrode&#x27;s public repositories. The arrow shaft and head construct once, while the supplied mark, words, and orange rule remain stationary.</desc>
+<desc id="footer-desc">An invitation to explore Raymond Hernbrode&#x27;s public repositories. The arrow shaft and head repeat a short forward construction over a static track, while the supplied mark, words, and orange rule remain stationary.</desc>
 <style>
 #footer-art .draw {stroke-dasharray: 100 100;}
-#footer-art .arrow-shaft {animation: footer-draw 0.24s cubic-bezier(.2,.7,.2,1) 0.08s 1 both;}
-#footer-art .arrow-head {animation: footer-draw 0.24s cubic-bezier(.16,1,.3,1) 0.2s 1 both;}
-@keyframes footer-draw {from {stroke-dashoffset: 100;} to {stroke-dashoffset: 0;}}
+#footer-art .arrow-shaft {animation: footer-draw-0 3.4s linear 0.08s infinite both;}
+@keyframes footer-draw-0 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.2,.7,.2,1);}11.059% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
+#footer-art .arrow-head {animation: footer-draw-1 3.4s linear 0.2s infinite both;}
+@keyframes footer-draw-1 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.16,1,.3,1);}11.059% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
 @media (prefers-reduced-motion: reduce) {
 #footer-art .motion, #footer-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
 }

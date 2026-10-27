@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="now-art" width="960" height="130" viewBox="0 0 960 130" role="img" aria-labelledby="now-title now-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<title id="now-title">Web apps. Desktop tools. Game systems. — Static version</title>
+<desc id="now-desc">Motion-free static artwork. All text, supplied identity, and category drawings are shown in their complete resting state.</desc>
+<rect width="960" height="130" fill="#1F1F1F" />
+<rect x="44" y="32" width="48" height="5" fill="#FF6A00" />
+<text x="44" y="93" fill="#F3EEE7" font-size="40" font-weight="400" letter-spacing="-1.2">Web apps. Desktop tools. Game systems.</text>
+<path d="M44 112H916" fill="none" stroke="#F3EEE7" stroke-opacity=".2" />
+<path d="M44 112H184" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw area-rule" d="M44 112H184" pathLength="100" fill="none" stroke="#FF6A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<rect x=".5" y=".5" width="959" height="129" fill="none" stroke="#F3EEE7" stroke-opacity=".18" />
+</svg>

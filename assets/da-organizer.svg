@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="da-organizer-art" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="da-organizer-title da-organizer-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="da-organizer-title">DAOrganizer — Your collection, brought together.</title>
-<desc id="da-organizer-desc">Find items. Arrange inventories. Review transfers. C# / Avalonia / .NET. A small monoline category drawing constructs once and settles beside the stationary project name. It is decorative artwork, not an application identity. Reduced motion shows the complete drawing.</desc>
+<desc id="da-organizer-desc">Find items. Arrange inventories. Review transfers. C# / Avalonia / .NET. A small monoline category drawing repeats a forward construction and gentle fade over a complete static track. It is decorative artwork, not an application identity. Reduced motion shows the complete drawing.</desc>
 <style>
 #da-organizer-art .draw {stroke-dasharray: 100 100;}
-#da-organizer-art .gesture-0 {animation: da-organizer-draw 0.42s cubic-bezier(.16,1,.3,1) 0.1s 1 both;}
-#da-organizer-art .gesture-1 {animation: da-organizer-draw 0.5s cubic-bezier(.22,.7,.2,1) 0.2s 1 both;}
-#da-organizer-art .gesture-2 {animation: da-organizer-draw 0.48s cubic-bezier(.16,1,.3,1) 0.3s 1 both;}
-@keyframes da-organizer-draw {from {stroke-dashoffset: 100;} to {stroke-dashoffset: 0;}}
+#da-organizer-art .gesture-0 {animation: da-organizer-draw-0 3.6s linear 0.1s infinite both;}
+@keyframes da-organizer-draw-0 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.16,1,.3,1);}15.667% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
+#da-organizer-art .gesture-1 {animation: da-organizer-draw-1 3.6s linear 0.2s infinite both;}
+@keyframes da-organizer-draw-1 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.22,.7,.2,1);}17.889% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
+#da-organizer-art .gesture-2 {animation: da-organizer-draw-2 3.6s linear 0.3s infinite both;}
+@keyframes da-organizer-draw-2 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.16,1,.3,1);}17.333% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
 @media (prefers-reduced-motion: reduce) {
 #da-organizer-art .motion, #da-organizer-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
 }

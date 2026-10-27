@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="da-merchant-art" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="da-merchant-title da-merchant-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="da-merchant-title">DAMerchant — Set up shop. Keep it connected.</title>
-<desc id="da-merchant-desc">Trading tools with AislingExchange integration. TypeScript / Windows. A small monoline category drawing constructs once and settles beside the stationary project name. It is decorative artwork, not an application identity. Reduced motion shows the complete drawing.</desc>
+<desc id="da-merchant-desc">Trading tools with AislingExchange integration. TypeScript / Windows. A small monoline category drawing repeats a forward construction and gentle fade over a complete static track. It is decorative artwork, not an application identity. Reduced motion shows the complete drawing.</desc>
 <style>
 #da-merchant-art .draw {stroke-dasharray: 100 100;}
-#da-merchant-art .gesture-0 {animation: da-merchant-draw 0.54s cubic-bezier(.16,1,.3,1) 0.1s 1 both;}
-#da-merchant-art .gesture-1 {animation: da-merchant-draw 0.6s cubic-bezier(.22,.7,.2,1) 0.22s 1 both;}
-@keyframes da-merchant-draw {from {stroke-dashoffset: 100;} to {stroke-dashoffset: 0;}}
+#da-merchant-art .gesture-0 {animation: da-merchant-draw-0 3.8s linear 0.1s infinite both;}
+@keyframes da-merchant-draw-0 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.16,1,.3,1);}18.211% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
+#da-merchant-art .gesture-1 {animation: da-merchant-draw-1 3.8s linear 0.22s infinite both;}
+@keyframes da-merchant-draw-1 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.22,.7,.2,1);}19.789% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
 @media (prefers-reduced-motion: reduce) {
 #da-merchant-art .motion, #da-merchant-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
 }

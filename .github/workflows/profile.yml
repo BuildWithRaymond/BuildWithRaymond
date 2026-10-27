@@ -2,7 +2,7 @@ name: Refresh public profile
 on:
   push:
     branches: [main]
-    paths: ['README.md', 'assets/**', 'scripts/**', 'tests/**', '.github/workflows/profile.yml']
+    paths: ['README.md', 'STATIC.md', 'assets/**', 'scripts/**', 'tests/**', '.github/workflows/profile.yml']
   schedule:
     - cron: '23 11 * * *'
   workflow_dispatch:
@@ -28,6 +28,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python3 scripts/update_activity.py
+      - name: Keep static profile equivalent
+        run: python3 scripts/render_static_profile.py
       - name: Validate profile assets
         run: python3 scripts/validate_profile.py
       - name: Install preview renderer
@@ -38,13 +40,13 @@ jobs:
         run: python3 scripts/render_preview.py
       - name: Commit updated public signal
         run: |
-          if git diff --quiet -- assets/activity.svg assets/activity-mobile.svg; then
+          if git diff --quiet -- STATIC.md assets/activity.svg assets/activity-mobile.svg assets/activity-static.svg assets/activity-mobile-static.svg; then
             echo "Public signal is current."
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/activity.svg assets/activity-mobile.svg
+          git add STATIC.md assets/activity.svg assets/activity-mobile.svg assets/activity-static.svg assets/activity-mobile-static.svg
           git commit -m "Refresh public repository signal"
           git push
 

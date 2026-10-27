@@ -7,13 +7,19 @@
 <path d="M24 58 H456 M24 212 H456 M24 398 H456" stroke="#1F1F1F"/>
 <path d="M24 58 H72" stroke="#FF6A00" stroke-width="2"/>
 <style>
-.activity-construction{animation:activity-build 750ms cubic-bezier(.22,1,.36,1) 180ms 1 both}
-@keyframes activity-build{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.activity-construction{animation:activity-build 4.2s cubic-bezier(.22,1,.36,1) infinite}
+@keyframes activity-build{
+0%,8%{stroke-dashoffset:1;opacity:0}
+12%{stroke-dashoffset:1;opacity:.4}
+32%,62%{stroke-dashoffset:0;opacity:.4}
+76%{stroke-dashoffset:0;opacity:0}
+77%,100%{stroke-dashoffset:1;opacity:0}
+}
 @media(prefers-reduced-motion:reduce){
-.activity-construction{animation:none!important;stroke-dashoffset:0!important}
+.activity-construction{animation:none!important;stroke-dashoffset:0!important;opacity:.4!important}
 }
 </style>
-<path class="activity-construction" d="M72 58 H456" pathLength="1" fill="none" stroke="#F3EEE7" stroke-width="1" stroke-dasharray="1 1" stroke-dashoffset="0" opacity=".24" aria-hidden="true"/>
+<path class="activity-construction" d="M72 58 H456" pathLength="1" fill="none" stroke="#F3EEE7" stroke-width="1.5" stroke-dasharray="1 1" stroke-dashoffset="0" opacity=".4" aria-hidden="true"/>
 <text x="24" y="132" fill="#F3EEE7" font-size="64" font-weight="700">07</text>
 <text x="24" y="166" fill="#BDB6AD" font-size="22">Original public</text>
 <text x="24" y="194" fill="#BDB6AD" font-size="22">repositories</text>

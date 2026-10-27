@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="footer-art" width="960" height="176" viewBox="0 0 960 176" role="img" aria-labelledby="footer-title footer-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
+<title id="footer-title">Make something useful. Explore Raymond's repositories. — Static version</title>
+<desc id="footer-desc">Motion-free static artwork. All text, supplied identity, and category drawings are shown in their complete resting state.</desc>
+<rect width="960" height="176" fill="#1F1F1F" />
+<g transform="translate(44 51) scale(0.526315789)"><g fill="#F3EEE7"><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g>
+</g>
+<text x="140" y="89" fill="#F3EEE7" font-size="52" font-weight="600" letter-spacing="-2">Make something useful.</text>
+<text x="143" y="133" fill="#F3EEE7" font-size="28" font-weight="400" letter-spacing="-.5">Explore the repositories.</text>
+<path d="M872 94H911" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw arrow-shaft" d="M872 94H911" pathLength="100" fill="none" stroke="#F3EEE7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M895 78L911 94L895 110" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><path class="motion draw arrow-head" d="M895 78L911 94L895 110" pathLength="100" fill="none" stroke="#F3EEE7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="0" y="170" width="960" height="6" fill="#FF6A00" />
+<rect x=".5" y=".5" width="959" height="175" fill="none" stroke="#F3EEE7" stroke-opacity=".18" />
+</svg>

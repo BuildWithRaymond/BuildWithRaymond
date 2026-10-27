@@ -3,8 +3,8 @@
 <desc id="da-workshop-desc">A section header for Raymond&#x27;s actual Dark Ages applications and community tools. Brand typography, not an application logo or invented interface.</desc>
 <style>
 #da-workshop-art .draw {stroke-dasharray: 100 100;}
-#da-workshop-art .workshop-rule {animation: da-workshop-draw 0.52s cubic-bezier(.22,.7,.2,1) 0.18s 1 both;}
-@keyframes da-workshop-draw {from {stroke-dashoffset: 100;} to {stroke-dashoffset: 0;}}
+#da-workshop-art .workshop-rule {animation: da-workshop-draw-0 4.0s linear 0.18s infinite both;}
+@keyframes da-workshop-draw-0 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.22,.7,.2,1);}17.000% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
 @media (prefers-reduced-motion: reduce) {
 #da-workshop-art .motion, #da-workshop-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
 }

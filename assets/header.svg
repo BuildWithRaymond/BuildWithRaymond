@@ -1,12 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="header-art" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="header-title header-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="header-title">Raymond Hernbrode — A higher standard online.</title>
-<desc id="header-desc">Raymond Hernbrode and the supplied outlined Hernbrode identity. One precise diagonal registration draws along the stationary H&#x27;s bridge angle and settles; reduced motion preserves complete artwork.</desc>
+<desc id="header-desc">Raymond Hernbrode and the supplied outlined Hernbrode identity. Orange accents move forward in a separate area below the copy, entirely clear of both stationary logos.</desc>
 <style>
-#header-art .draw {stroke-dasharray: 100 100;}
-#header-art .register-pass {animation: header-draw 1.18s cubic-bezier(.22,.68,0,1) 0.16s 1 both;}
-#header-art .register-start {animation: header-draw 0.42s cubic-bezier(.16,1,.3,1) 1.38s 1 both;}
-#header-art .register-finish {animation: header-draw 0.42s cubic-bezier(.16,1,.3,1) 1.5s 1 both;}
-@keyframes header-draw {from {stroke-dashoffset: 100;} to {stroke-dashoffset: 0;}}
+
+#header-art .accent-pass {animation: header-pass 3.8s cubic-bezier(.35,0,.2,1) .12s infinite both; transform-box: view-box;}
+#header-art .accent-companion {animation: header-companion 3.8s cubic-bezier(.35,0,.2,1) .24s infinite both; transform-box: view-box;}
+@keyframes header-pass {0% {transform: translateX(-110px);} 40%,100% {transform: translateX(656px);}}
+@keyframes header-companion {0% {transform: translateX(-110px);} 44%,100% {transform: translateX(656px);}}
+
 @media (prefers-reduced-motion: reduce) {
 #header-art .motion, #header-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
 }
@@ -19,10 +20,7 @@
 <text x="40" y="190" fill="#F3EEE7" font-size="72" font-weight="600" letter-spacing="-3.4">Raymond</text>
 <text x="40" y="269" fill="#F3EEE7" font-size="72" font-weight="600" letter-spacing="-3.4">Hernbrode.</text>
 <text x="44" y="341" fill="#F3EEE7" font-size="39" font-weight="400" letter-spacing="-1.3">A higher standard online.</text>
-<rect x="44" y="378" width="72" height="6" fill="#FF6A00"/>
-<path d="M710 230.58L940 114.0865" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw register-pass" d="M710 230.58L940 114.0865" pathLength="100" fill="none" stroke="#FF6A00" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M706.4 223.5L713.6 237.7" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw register-start" d="M706.4 223.5L713.6 237.7" pathLength="100" fill="none" stroke="#BDB6AD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M936.4 107L943.6 121.2" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw register-finish" d="M936.4 107L943.6 121.2" pathLength="100" fill="none" stroke="#BDB6AD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<defs><clipPath id="header-accent-clip"><rect x="44" y="366" width="576" height="36"/></clipPath></defs><g clip-path="url(#header-accent-clip)"><path class="motion accent-companion" d="M52 386L80 371.8182" fill="none" stroke="#BDB6AD" stroke-width="2"/><path class="motion accent-pass" d="M52 394L100 369.6883" fill="none" stroke="#FF6A00" stroke-width="6"/></g>
 <g transform="translate(748 116) scale(1.333333333)"><g fill="#F3EEE7"><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g>
 </g>
 <rect x="688" y="412" width="272" height="8" fill="#FF6A00"/>

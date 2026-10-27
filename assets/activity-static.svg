@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="252" viewBox="0 0 960 252" role="img" aria-labelledby="title desc">
+<title id="title">Public signal: 7 original public repositories and 4 stars</title>
+<desc id="desc">Language counts are repositories, not lines of code. Forks and this profile are excluded. Updated 2026-10-27 UTC.</desc>
+<rect x=".5" y=".5" width="959" height="251" fill="#0B0B0B" stroke="#1F1F1F" />
+<g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+<text x="28" y="34" fill="#F3EEE7" font-size="14" font-weight="600" letter-spacing="2">PUBLIC SIGNAL</text>
+<text x="932" y="34" text-anchor="end" fill="#BDB6AD" font-size="13">UPDATED 2026-10-27 UTC</text>
+<path d="M28 56 H932 M458 84 V185" stroke="#1F1F1F" />
+<path d="M28 56 H76" stroke="#FF6A00" stroke-width="2" />
+<path class="activity-construction" d="M76 56 H932" pathLength="1" fill="none" stroke="#F3EEE7" stroke-width="1.5" stroke-dasharray="1 1" stroke-dashoffset="0" opacity=".4" aria-hidden="true" />
+<text x="28" y="136" fill="#F3EEE7" font-size="54" font-weight="700">07</text>
+<text x="28" y="166" fill="#BDB6AD" font-size="16">Original public repositories</text>
+<text x="268" y="136" fill="#F3EEE7" font-size="54" font-weight="700">04</text>
+<text x="268" y="166" fill="#BDB6AD" font-size="16">Stars across these repos</text>
+<text x="492" y="114" fill="#F3EEE7" font-size="16">C#</text><rect x="492" y="132" width="84" height="4" fill="#1F1F1F" /><rect x="492" y="132" width="48" height="4" fill="#FF6A00" /><text x="492" y="163" fill="#BDB6AD" font-size="15">4 repos</text><text x="597" y="114" fill="#F3EEE7" font-size="16">TypeScript</text><rect x="597" y="132" width="84" height="4" fill="#1F1F1F" /><rect x="597" y="132" width="24" height="4" fill="#F3EEE7" /><text x="597" y="163" fill="#BDB6AD" font-size="15">2 repos</text><text x="702" y="114" fill="#F3EEE7" font-size="16">C++</text><rect x="702" y="132" width="84" height="4" fill="#1F1F1F" /><rect x="702" y="132" width="12" height="4" fill="#F3EEE7" /><text x="702" y="163" fill="#BDB6AD" font-size="15">1 repo</text>
+<text x="492" y="214" fill="#BDB6AD" font-size="13">PRIMARY LANGUAGE / REPOSITORY COUNT</text>
+<text x="28" y="214" fill="#BDB6AD" font-size="13">Public metadata. Forks and this profile excluded.</text>
+</g></svg>

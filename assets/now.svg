@@ -3,8 +3,8 @@
 <desc id="now-desc">Raymond&#x27;s areas of work: web applications, desktop tools, and game systems. A short underline draws once; the words remain visible and stationary.</desc>
 <style>
 #now-art .draw {stroke-dasharray: 100 100;}
-#now-art .area-rule {animation: now-draw 0.72s cubic-bezier(.22,.7,.2,1) 0.12s 1 both;}
-@keyframes now-draw {from {stroke-dashoffset: 100;} to {stroke-dashoffset: 0;}}
+#now-art .area-rule {animation: now-draw-0 4.2s linear 0.12s infinite both;}
+@keyframes now-draw-0 {0% {stroke-dashoffset: 100; opacity: 0; animation-timing-function: linear;}4% {stroke-dashoffset: 100; opacity: 1; animation-timing-function: cubic-bezier(.22,.7,.2,1);}21.143% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: linear;}57% {stroke-dashoffset: 0; opacity: 1; animation-timing-function: cubic-bezier(.4,0,1,1);}72% {stroke-dashoffset: 0; opacity: 0; animation-timing-function: steps(1,end);}73%,100% {stroke-dashoffset: 100; opacity: 0;}}
 @media (prefers-reduced-motion: reduce) {
 #now-art .motion, #now-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
 }
