@@ -1,10 +1,10 @@
 <picture>
   <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/header-mobile.svg" />
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/header.svg" width="960" alt="Raymond Hernbrode — A higher standard online." />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/header.svg" width="960" alt="Raymond Hernbrode â€” A higher standard online." />
 </picture>
 
 <p>
-  <a href="#what-i-build">What I build</a> · <a href="#selected-public-projects">Selected projects</a> · <a href="https://github.com/BuildWithRaymond?tab=repositories">All repositories ↗</a>
+  <a href="#what-i-build">What I build</a> Â· <a href="#selected-public-projects">Selected projects</a> Â· <a href="https://github.com/BuildWithRaymond?tab=repositories">All repositories â†—</a>
 </p>
 
 I'm **Raymond Hernbrode**, the designer and developer behind **Hernbrode**. I started making websites as a hobby at 13, then moved into WordPress. That interest grew into building websites, web applications, and desktop tools.
@@ -13,9 +13,9 @@ Hernbrode is my independent studio. I handle the design, development, and ongoin
 
 ## What I build
 
-- **Websites** — Shopify, WordPress, and custom sites, with a clear structure and careful attention to how people use them.
-- **Apps and custom features** — themes, integrations, web interfaces, and Windows tools built around a specific workflow.
-- **Ongoing website management** — agreed content changes, site checks, and improvements after launch, with priorities and scope worked out together.
+- **Websites** â€” Shopify, WordPress, and custom sites, with a clear structure and careful attention to how people use them.
+- **Apps and custom features** â€” themes, integrations, web interfaces, and Windows tools built around a specific workflow.
+- **Ongoing website management** â€” agreed content changes, site checks, and improvements after launch, with priorities and scope worked out together.
 
 My approach: make the next step clear, keep the controls understandable, and show what happened. The public projects below put those ideas into practice.
 
@@ -29,9 +29,9 @@ Apps and community tools for **Dark Ages**. These are community software project
 
 A Windows trading tool that brings character listings, trade history, and an AislingExchange marketplace connection into one interface.
 
-React · TypeScript · Electron · SQLite
+React Â· TypeScript Â· Electron Â· SQLite
 
-[Explore the source](https://github.com/BuildWithRaymond/DAMerchant) · [Latest release](https://github.com/BuildWithRaymond/DAMerchant/releases/latest)
+[Explore the source](https://github.com/BuildWithRaymond/DAMerchant) Â· [Latest release](https://github.com/BuildWithRaymond/DAMerchant/releases/latest)
 
 ### [DAOrganizer](https://github.com/BuildWithRaymond/DAOrganizer)
 
@@ -39,22 +39,20 @@ React · TypeScript · Electron · SQLite
 
 A Windows companion for searching a collection across characters, organizing inventory, and reviewing items held in banks.
 
-C# · Avalonia · .NET · SQLite
+C# Â· Avalonia Â· .NET Â· SQLite
 
-[Explore the source](https://github.com/BuildWithRaymond/DAOrganizer) · [Latest release](https://github.com/BuildWithRaymond/DAOrganizer/releases/latest)
+[Explore the source](https://github.com/BuildWithRaymond/DAOrganizer) Â· [Latest release](https://github.com/BuildWithRaymond/DAOrganizer/releases/latest)
 
 ### More from the workshop
 
-- **[DAQuester](https://github.com/BuildWithRaymond/DAQuester)** — quest planning and tracking. [Latest release](https://github.com/BuildWithRaymond/DAQuester/releases/latest).
-- **[DASpeaker](https://github.com/BuildWithRaymond/DASpeaker)** — speech preparation and communication tooling. [Latest release](https://github.com/BuildWithRaymond/DASpeaker/releases/latest).
-- **[DASB](https://github.com/BuildWithRaymond/DASB)** — protocol and developer tooling.
-- **[UnoraWiki](https://github.com/BuildWithRaymond/UnoraWiki)** — a fork of the [Unora community wiki](https://github.com/unora-project/unora-project.github.io), with upstream credit retained.
-- **[unora-wiki-svelte](https://github.com/BuildWithRaymond/unora-wiki-svelte)** — Unora wiki frontend repository.
-- **[sveltia-cms-auth](https://github.com/BuildWithRaymond/sveltia-cms-auth)** — CMS authentication repository for the wiki tooling.
+- **[DAQuester](https://github.com/BuildWithRaymond/DAQuester)** â€” quest planning and tracking. [Latest release](https://github.com/BuildWithRaymond/DAQuester/releases/latest).
+- **[DASpeaker](https://github.com/BuildWithRaymond/DASpeaker)** â€” speech preparation and communication tooling. [Latest release](https://github.com/BuildWithRaymond/DASpeaker/releases/latest).
+- **[DASB](https://github.com/BuildWithRaymond/DASB)** â€” protocol and developer tooling.
+- **[UnoraWiki](https://github.com/BuildWithRaymond/UnoraWiki)** â€” a fork of the [Unora community wiki](https://github.com/unora-project/unora-project.github.io), with upstream credit retained.
 
 ## Tools I work with
 
-C# / .NET · Avalonia · TypeScript · React / Next.js · Node.js · SQLite
+C# / .NET Â· Avalonia Â· TypeScript Â· React / Next.js Â· Node.js Â· SQLite
 
 ## Built in public
 
@@ -66,4 +64,3 @@ C# / .NET · Avalonia · TypeScript · React / Next.js · Node.js · SQLite
 Public repositories only. Forks and this profile repository are excluded. Languages are counted by repository, not by lines of code. Artwork refreshes daily from GitHub's public metadata.
 
 <a href="https://github.com/BuildWithRaymond?tab=repositories"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/footer.svg" width="960" alt="Make something useful. Explore the repositories." /></a>
-
