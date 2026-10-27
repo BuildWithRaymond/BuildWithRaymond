@@ -2,12 +2,11 @@
 <title id="header-mobile-title">Raymond Hernbrode — A higher standard online.</title>
 <desc id="header-mobile-desc">Mobile composition of the supplied Hernbrode identity, Raymond Hernbrode&#x27;s name, and the brand line.</desc>
 <style>
-
-#header-mobile-art .sweep {animation: header-mobile-sweep 10.8s cubic-bezier(.4,0,.2,1) infinite; transform-box: view-box;}
-#header-mobile-art .rail {animation: header-mobile-rail 10.8s cubic-bezier(.4,0,.2,1) infinite; transform-box: fill-box; transform-origin: left center;}
-@keyframes header-mobile-sweep {0%,8%,35%,100% {transform: translateX(0);} 23% {transform: translateX(30px);}}
-@keyframes header-mobile-rail {0%,10%,35%,100% {transform: scaleX(1);} 23% {transform: scaleX(.58);}}
-
+#header-mobile-art .draw {stroke-dasharray: 100 100;}
+#header-mobile-art .register-pass {animation: header-mobile-draw 1.18s cubic-bezier(.22,.68,0,1) 0.16s 1 both;}
+#header-mobile-art .register-start {animation: header-mobile-draw 0.42s cubic-bezier(.16,1,.3,1) 1.38s 1 both;}
+#header-mobile-art .register-finish {animation: header-mobile-draw 0.42s cubic-bezier(.16,1,.3,1) 1.5s 1 both;}
+@keyframes header-mobile-draw {from {stroke-dashoffset: 100;} to {stroke-dashoffset: 0;}}
 @media (prefers-reduced-motion: reduce) {
 #header-mobile-art .motion, #header-mobile-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
 }
@@ -21,10 +20,11 @@
 <text x="28" y="317" fill="#F3EEE7" font-size="37" font-weight="400" letter-spacing="-1.2">A higher standard</text>
 <text x="28" y="360" fill="#F3EEE7" font-size="37" font-weight="400" letter-spacing="-1.2">online.</text>
 <rect x="344" y="386" width="108" height="114" fill="#1F1F1F"/>
-<defs><clipPath id="header-mobile-panel"><rect x="344" y="386" width="108" height="114"/></clipPath></defs>
-<g clip-path="url(#header-mobile-panel)"><path class="motion sweep" d="M346 376H357L421 510H410Z" fill="#FF6A00" fill-opacity=".13"/></g>
+<path d="M350 452L444 404.3896" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw register-pass" d="M350 452L444 404.3896" pathLength="100" fill="none" stroke="#FF6A00" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M346.4 444.9L353.6 459.1" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw register-start" d="M346.4 444.9L353.6 459.1" pathLength="100" fill="none" stroke="#BDB6AD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M440.4 397.3L447.6 411.5" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw register-finish" d="M440.4 397.3L447.6 411.5" pathLength="100" fill="none" stroke="#BDB6AD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <g transform="translate(369 406) scale(0.508771930)"><g fill="#F3EEE7"><path d="M0 4H36V47L0 64Z M0 79L77 40V0H114V123H77V66L36 86V127H0Z" /></g>
 </g>
-<rect class="motion rail" x="28" y="446" width="66" height="6" fill="#FF6A00"/>
+<rect x="28" y="446" width="66" height="6" fill="#FF6A00"/>
 <rect x=".5" y=".5" width="479" height="499" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
 </svg>

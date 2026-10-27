@@ -6,7 +6,8 @@ Run from the Agency workspace:
 For another checkout, pass the directory containing the approved logo-cream.svg
 and mark-cream.svg files. This script is not run by the activity
 workflow. Each output is a standalone SVG without external resources.
-Motion has long rests; reduced-motion preferences return complete static art.
+Each authored construction plays once and settles. Reduced motion returns
+complete static art. Supplied identity geometry and all text stay stationary.
 """
 
 import argparse
@@ -65,24 +66,99 @@ def motion_style(name, rules):
     )
 
 
-def sweep_motion(name, distance, duration=10.8):
-    return motion_style(name, f"""
-#{name}-art .sweep {{animation: {name}-sweep {duration}s cubic-bezier(.4,0,.2,1) infinite; transform-box: view-box;}}
-#{name}-art .rail {{animation: {name}-rail {duration}s cubic-bezier(.4,0,.2,1) infinite; transform-box: fill-box; transform-origin: left center;}}
-@keyframes {name}-sweep {{0%,8%,35%,100% {{transform: translateX(0);}} 23% {{transform: translateX({distance}px);}}}}
-@keyframes {name}-rail {{0%,10%,35%,100% {{transform: scaleX(1);}} 23% {{transform: scaleX(.58);}}}}
-""")
+def construction_motion(name, actions):
+    """Each action owns its duration and ease; no timeline knots or reversal."""
+    rules = [f'#{name}-art .draw {{stroke-dasharray: 100 100;}}']
+    for class_name, duration, delay, ease in actions:
+        rules.append(
+            f'#{name}-art .{class_name} {{animation: {name}-draw '
+            f'{duration}s {ease} {delay}s 1 both;}}'
+        )
+    rules.append(
+        f'@keyframes {name}-draw {{from {{stroke-dashoffset: 100;}} '
+        'to {stroke-dashoffset: 0;}}'
+    )
+    return motion_style(name, '\n'.join(rules))
 
 
-def project_motion(name, index):
-    duration = 9.6 + (index % 3) * .8
-    travel = 260 if index % 2 == 0 else -270
-    return motion_style(name, f"""
-#{name}-art .corner {{animation: {name}-corner {duration}s ease-in-out {index * .18:.2f}s infinite;}}
-#{name}-art .underline {{animation: {name}-underline {duration}s cubic-bezier(.4,0,.2,1) {index * .18:.2f}s infinite; transform-box: fill-box; transform-origin: left center;}}
-@keyframes {name}-corner {{0%,8%,35%,100% {{stroke-dasharray: 120 0; stroke-dashoffset: 0;}} 16% {{stroke-dasharray: 28 92; stroke-dashoffset: 0;}} 28% {{stroke-dasharray: 28 92; stroke-dashoffset: -120;}} 34% {{stroke-dasharray: 120 0; stroke-dashoffset: -120;}}}}
-@keyframes {name}-underline {{0%,10%,36%,100% {{transform: translateX(0) scaleX(1);}} 25% {{transform: translateX({travel}px) scaleX(1.45);}}}}
-""")
+def drawn_path(d, action, color=ORANGE, width=2, track_opacity=".18"):
+    """The complete underdrawing is visible even before decorative construction."""
+    return (
+        f'<path d="{d}" fill="none" stroke="{CREAM}" '
+        f'stroke-opacity="{track_opacity}" stroke-width="{width}" '
+        'stroke-linecap="round" stroke-linejoin="round"/>'
+        f'<path class="motion draw {action}" d="{d}" pathLength="100" '
+        f'fill="none" stroke="{color}" stroke-width="{width}" '
+        'stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+
+
+def header_registration(mobile=False):
+    # Rise/run is the supplied H bridge's -39/77. Its geometry is never changed.
+    paths = (
+        ["M350 452L444 404.3896", "M346.4 444.9L353.6 459.1", "M440.4 397.3L447.6 411.5"]
+        if mobile else
+        ["M710 230.58L940 114.0865", "M706.4 223.5L713.6 237.7", "M936.4 107L943.6 121.2"]
+    )
+    return [
+        drawn_path(paths[0], "register-pass", width=1.7),
+        drawn_path(paths[1], "register-start", color=MUTED, width=1.5),
+        drawn_path(paths[2], "register-finish", color=MUTED, width=1.5),
+    ]
+
+
+def header_motion(name):
+    return construction_motion(name, [
+        ("register-pass", 1.18, .16, "cubic-bezier(.22,.68,0,1)"),
+        ("register-start", .42, 1.38, "cubic-bezier(.16,1,.3,1)"),
+        ("register-finish", .42, 1.50, "cubic-bezier(.16,1,.3,1)"),
+    ])
+
+
+def category_gesture(name):
+    """Original small category drawings, not application logos or interfaces."""
+    out = "cubic-bezier(.16,1,.3,1)"
+    settle = "cubic-bezier(.22,.7,.2,1)"
+    gestures = {
+        "da-organizer": [
+            ("M389 24H423V33H389Z", MUTED, .42, .10, out),
+            ("M389 39H423V48H389Z", ORANGE, .50, .20, settle),
+            ("M389 54H423V63H389Z", MUTED, .48, .30, out),
+        ],
+        "da-merchant": [
+            ("M389 32H423M417 26L423 32L417 38", ORANGE, .54, .10, out),
+            ("M423 51H389M395 45L389 51L395 57", MUTED, .60, .22, settle),
+        ],
+        "da-quester": [
+            ("M389 55V40H416V27", ORANGE, .64, .12, settle),
+            ("M392 55A3 3 0 1 1 386 55A3 3 0 1 1 392 55", MUTED, .26, .10, out),
+            ("M419 27A3 3 0 1 1 413 27A3 3 0 1 1 419 27", MUTED, .26, .64, out),
+        ],
+        "da-speaker": [
+            ("M389 39V45", MUTED, .22, .10, out),
+            ("M397 32V52", MUTED, .30, .18, out),
+            ("M405 25V59", ORANGE, .38, .26, settle),
+            ("M413 32V52", MUTED, .30, .34, out),
+            ("M421 39V45", MUTED, .22, .42, out),
+        ],
+        "da-dasb": [
+            ("M398 27L389 41L398 55", MUTED, .42, .10, out),
+            ("M414 27L423 41L414 55", MUTED, .42, .22, out),
+            ("M400 41H412", ORANGE, .32, .46, settle),
+        ],
+        "da-wiki": [
+            ("M386 32V62H414", MUTED, .40, .10, out),
+            ("M391 24H414L423 33V57H391Z M414 24V33H423", MUTED, .62, .20, settle),
+            ("M398 41H416M398 48H409", ORANGE, .36, .56, out),
+        ],
+    }
+    paths = []
+    actions = []
+    for index, (d, color, duration, delay, ease) in enumerate(gestures[name]):
+        action = f"gesture-{index}"
+        paths.append(drawn_path(d, action, color=color, width=2.2))
+        actions.append((action, duration, delay, ease))
+    return paths, construction_motion(name, actions)
 
 
 def svg(name, width, height, title, description, artwork, background=INK, motion=""):
@@ -110,7 +186,7 @@ def render(brand_dir, output):
     assets["header.svg"] = svg(
         "header", 960, 420,
         "Raymond Hernbrode — A higher standard online.",
-        "Raymond Hernbrode and the supplied outlined Hernbrode identity. A measured orange sweep sits behind the stationary mark; reduced motion preserves the complete artwork.",
+        "Raymond Hernbrode and the supplied outlined Hernbrode identity. One precise diagonal registration draws along the stationary H's bridge angle and settles; reduced motion preserves complete artwork.",
         [
             f'<rect x="688" width="272" height="420" fill="{CHARCOAL}"/>',
             identity(brand_dir, "logo-cream.svg", 44, 38, 246),
@@ -119,11 +195,10 @@ def render(brand_dir, output):
             text(40, 269, "Hernbrode.", 72, weight=600, spacing="-3.4"),
             text(44, 341, "A higher standard online.", 39, spacing="-1.3"),
             f'<rect x="44" y="378" width="72" height="6" fill="{ORANGE}"/>',
-            '<defs><clipPath id="header-panel"><rect x="688" width="272" height="412"/></clipPath></defs>',
-            f'<g clip-path="url(#header-panel)"><path class="motion sweep" d="M692 -40H718L942 452H916Z" fill="{ORANGE}" fill-opacity=".13"/></g>',
+            *header_registration(),
             identity(brand_dir, "mark-cream.svg", 748, 116, 152),
-            f'<rect class="motion rail" x="688" y="412" width="272" height="8" fill="{ORANGE}"/>',
-        ], motion=sweep_motion("header", 100),
+            f'<rect x="688" y="412" width="272" height="8" fill="{ORANGE}"/>',
+        ], motion=header_motion("header"),
     )
     assets["header-mobile.svg"] = svg(
         "header-mobile", 480, 500,
@@ -137,25 +212,23 @@ def render(brand_dir, output):
             text(28, 317, "A higher standard", 37, spacing="-1.2"),
             text(28, 360, "online.", 37, spacing="-1.2"),
             f'<rect x="344" y="386" width="108" height="114" fill="{CHARCOAL}"/>',
-            '<defs><clipPath id="header-mobile-panel"><rect x="344" y="386" width="108" height="114"/></clipPath></defs>',
-            f'<g clip-path="url(#header-mobile-panel)"><path class="motion sweep" d="M346 376H357L421 510H410Z" fill="{ORANGE}" fill-opacity=".13"/></g>',
+            *header_registration(mobile=True),
             identity(brand_dir, "mark-cream.svg", 369, 406, 58),
-            f'<rect class="motion rail" x="28" y="446" width="66" height="6" fill="{ORANGE}"/>',
-        ], motion=sweep_motion("header-mobile", 30),
+            f'<rect x="28" y="446" width="66" height="6" fill="{ORANGE}"/>',
+        ], motion=header_motion("header-mobile"),
     )
     assets["now.svg"] = svg(
         "now", 960, 130,
         "Web apps. Desktop tools. Game systems.",
-        "Raymond's areas of work: web applications, desktop tools, and game systems. A quiet marker follows the areas without moving the text.",
+        "Raymond's areas of work: web applications, desktop tools, and game systems. A short underline draws once; the words remain visible and stationary.",
         [
             f'<rect x="44" y="32" width="48" height="5" fill="{ORANGE}"/>',
             text(44, 93, "Web apps. Desktop tools. Game systems.", 40, spacing="-1.2"),
             rule(44, 112, 916, 112),
-            f'<rect class="motion category-marker" x="44" y="110" width="140" height="3" fill="{ORANGE}"/>',
-        ], background=CHARCOAL, motion=motion_style("now", """
-#now-art .category-marker {animation: now-categories 12s cubic-bezier(.4,0,.2,1) infinite; transform-box: view-box;}
-@keyframes now-categories {0%,8%,35%,100% {transform: translateX(0);} 17% {transform: translateX(235px);} 26% {transform: translateX(560px);}}
-"""),
+            drawn_path("M44 112H184", "area-rule", width=2),
+        ], background=CHARCOAL, motion=construction_motion("now", [
+            ("area-rule", .72, .12, "cubic-bezier(.22,.7,.2,1)"),
+        ]),
     )
     assets["stack.svg"] = svg(
         "stack", 960, 240,
@@ -171,11 +244,14 @@ def render(brand_dir, output):
             rule(44, 168, 436, 168), rule(524, 168, 916, 168),
             text(44, 214, "Node.js", 40, weight=550, spacing="-1"),
             text(524, 214, "SQLite", 40, weight=550, spacing="-1"),
-            f'<rect class="motion stack-marker" x="18" y="48" width="4" height="24" fill="{ORANGE}"/>',
-        ], motion=motion_style("stack", """
-#stack-art .stack-marker {animation: stack-rows 11.4s cubic-bezier(.4,0,.2,1) .18s infinite; transform-box: view-box;}
-@keyframes stack-rows {0%,8%,35%,100% {transform: translateY(0);} 17% {transform: translateY(70px);} 26% {transform: translateY(140px);}}
-"""),
+            drawn_path("M18 60H26", "stack-top", width=2),
+            drawn_path("M18 130H26", "stack-middle", width=2),
+            drawn_path("M18 200H26", "stack-bottom", width=2),
+        ], motion=construction_motion("stack", [
+            ("stack-top", .32, .12, "cubic-bezier(.16,1,.3,1)"),
+            ("stack-middle", .32, .22, "cubic-bezier(.16,1,.3,1)"),
+            ("stack-bottom", .32, .32, "cubic-bezier(.16,1,.3,1)"),
+        ]),
     )
     assets["da-workshop.svg"] = svg(
         "da-workshop", 960, 220,
@@ -188,11 +264,10 @@ def render(brand_dir, output):
             rule(590, 42, 590, 178),
             text(638, 104, "Selected", 32, fill=MUTED, spacing="-.5"),
             text(638, 150, "projects.", 40, weight=550, spacing="-1.2"),
-            f'<rect class="motion workshop-marker" x="588.5" y="42" width="3" height="26" fill="{ORANGE}"/>',
-        ], background=CHARCOAL, motion=motion_style("da-workshop", """
-#da-workshop-art .workshop-marker {animation: workshop-rule 10.4s cubic-bezier(.4,0,.2,1) .36s infinite; transform-box: view-box;}
-@keyframes workshop-rule {0%,8%,35%,100% {transform: translateY(0);} 23% {transform: translateY(110px);}}
-"""),
+            drawn_path("M590 42V86", "workshop-rule", width=2),
+        ], background=CHARCOAL, motion=construction_motion("da-workshop", [
+            ("workshop-rule", .52, .18, "cubic-bezier(.22,.7,.2,1)"),
+        ]),
     )
     projects = [
         ("da-organizer", "DAOrganizer", "Inventory & transfers", "Your collection, brought together.",
@@ -208,38 +283,35 @@ def render(brand_dir, output):
         ("da-wiki", "UnoraWiki", "Community wiki / Fork", "Knowledge worth keeping together.",
          "A Dark Ages community wiki. Forked from Unora. Community fork with upstream credit.", CHARCOAL),
     ]
-    for index, (name, title, category, original_line, description, background) in enumerate(projects):
+    for name, title, category, original_line, description, background in projects:
         foreground = CREAM
-        corner = "M402 28H432V58" if index % 2 == 0 else "M28 173V188H58"
-        marker_x = 28 if index % 2 == 0 else 360
+        gesture, motion = category_gesture(name)
         assets[name + ".svg"] = svg(
             name, 460, 220, f"{title} — {original_line}",
-            f"{description} A restrained corner trace and underline frame the stationary project name. Complete static artwork is shown with reduced motion.",
+            f"{description} A small monoline category drawing constructs once and settles beside the stationary project name. It is decorative artwork, not an application identity. Reduced motion shows the complete drawing.",
             [
                 f'<rect x="28" y="28" width="46" height="5" fill="{ORANGE}"/>',
                 text(25, 107, title, 53, fill=foreground, weight=600, spacing="-2.4"),
                 text(28, 153, category, 25, fill=foreground, spacing="-.5"),
                 rule(28, 188, 432, 188, color=foreground),
-                f'<path class="motion corner" d="{corner}" pathLength="120" fill="none" stroke="{ORANGE}" stroke-width="2"/>',
-                f'<rect class="motion underline" x="{marker_x}" y="187" width="32" height="2" fill="{ORANGE}"/>',
-            ], background=background, motion=project_motion(name, index),
+                *gesture,
+            ], background=background, motion=motion,
         )
     assets["footer.svg"] = svg(
         "footer", 960, 176,
         "Make something useful. Explore Raymond's repositories.",
-        "An invitation to explore Raymond Hernbrode's public repositories. The arrow and orange rule move briefly, while the supplied mark and words remain stationary.",
+        "An invitation to explore Raymond Hernbrode's public repositories. The arrow shaft and head construct once, while the supplied mark, words, and orange rule remain stationary.",
         [
             identity(brand_dir, "mark-cream.svg", 44, 51, 60),
             text(140, 89, "Make something useful.", 52, weight=600, spacing="-2"),
             text(143, 133, "Explore the repositories.", 28, spacing="-.5"),
-            f'<path class="motion footer-arrow" d="M872 94H911M895 78L911 94L895 110" fill="none" stroke="{CREAM}" stroke-width="3"/>',
-            f'<rect class="motion footer-rail" x="0" y="170" width="960" height="6" fill="{ORANGE}"/>',
-        ], background=CHARCOAL, motion=motion_style("footer", """
-#footer-art .footer-arrow {animation: footer-invitation 9.8s cubic-bezier(.4,0,.2,1) infinite; transform-box: view-box;}
-#footer-art .footer-rail {animation: footer-rule 9.8s cubic-bezier(.4,0,.2,1) infinite; transform-box: fill-box; transform-origin: left center;}
-@keyframes footer-invitation {0%,10%,35%,100% {transform: translateX(0);} 20% {transform: translateX(9px);} 30% {transform: translateX(0);}}
-@keyframes footer-rule {0%,8%,35%,100% {transform: scaleX(1);} 23% {transform: scaleX(.88);}}
-"""),
+            drawn_path("M872 94H911", "arrow-shaft", color=CREAM, width=3),
+            drawn_path("M895 78L911 94L895 110", "arrow-head", color=CREAM, width=3),
+            f'<rect x="0" y="170" width="960" height="6" fill="{ORANGE}"/>',
+        ], background=CHARCOAL, motion=construction_motion("footer", [
+            ("arrow-shaft", .24, .08, "cubic-bezier(.2,.7,.2,1)"),
+            ("arrow-head", .24, .20, "cubic-bezier(.16,1,.3,1)"),
+        ]),
     )
     for filename, content in assets.items():
         (output / filename).write_text(content, encoding="utf-8")

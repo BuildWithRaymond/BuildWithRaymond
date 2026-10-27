@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="da-wiki-art" width="460" height="220" viewBox="0 0 460 220" role="img" aria-labelledby="da-wiki-title da-wiki-desc" font-family="Inter, Segoe UI, Arial, sans-serif">
 <title id="da-wiki-title">UnoraWiki — Knowledge worth keeping together.</title>
-<desc id="da-wiki-desc">A Dark Ages community wiki. Forked from Unora. Community fork with upstream credit. A restrained corner trace and underline frame the stationary project name. Complete static artwork is shown with reduced motion.</desc>
+<desc id="da-wiki-desc">A Dark Ages community wiki. Forked from Unora. Community fork with upstream credit. A small monoline category drawing constructs once and settles beside the stationary project name. It is decorative artwork, not an application identity. Reduced motion shows the complete drawing.</desc>
 <style>
-
-#da-wiki-art .corner {animation: da-wiki-corner 11.2s ease-in-out 0.90s infinite;}
-#da-wiki-art .underline {animation: da-wiki-underline 11.2s cubic-bezier(.4,0,.2,1) 0.90s infinite; transform-box: fill-box; transform-origin: left center;}
-@keyframes da-wiki-corner {0%,8%,35%,100% {stroke-dasharray: 120 0; stroke-dashoffset: 0;} 16% {stroke-dasharray: 28 92; stroke-dashoffset: 0;} 28% {stroke-dasharray: 28 92; stroke-dashoffset: -120;} 34% {stroke-dasharray: 120 0; stroke-dashoffset: -120;}}
-@keyframes da-wiki-underline {0%,10%,36%,100% {transform: translateX(0) scaleX(1);} 25% {transform: translateX(-270px) scaleX(1.45);}}
-
+#da-wiki-art .draw {stroke-dasharray: 100 100;}
+#da-wiki-art .gesture-0 {animation: da-wiki-draw 0.4s cubic-bezier(.16,1,.3,1) 0.1s 1 both;}
+#da-wiki-art .gesture-1 {animation: da-wiki-draw 0.62s cubic-bezier(.22,.7,.2,1) 0.2s 1 both;}
+#da-wiki-art .gesture-2 {animation: da-wiki-draw 0.36s cubic-bezier(.16,1,.3,1) 0.56s 1 both;}
+@keyframes da-wiki-draw {from {stroke-dashoffset: 100;} to {stroke-dashoffset: 0;}}
 @media (prefers-reduced-motion: reduce) {
 #da-wiki-art .motion, #da-wiki-art .motion * {animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; stroke-dasharray: none !important; stroke-dashoffset: 0 !important;}
 }
@@ -17,7 +16,8 @@
 <text x="25" y="107" fill="#F3EEE7" font-size="53" font-weight="600" letter-spacing="-2.4">UnoraWiki</text>
 <text x="28" y="153" fill="#F3EEE7" font-size="25" font-weight="400" letter-spacing="-.5">Community wiki / Fork</text>
 <path d="M28 188H432" fill="none" stroke="#F3EEE7" stroke-opacity=".2"/>
-<path class="motion corner" d="M28 173V188H58" pathLength="120" fill="none" stroke="#FF6A00" stroke-width="2"/>
-<rect class="motion underline" x="360" y="187" width="32" height="2" fill="#FF6A00"/>
+<path d="M386 32V62H414" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw gesture-0" d="M386 32V62H414" pathLength="100" fill="none" stroke="#BDB6AD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M391 24H414L423 33V57H391Z M414 24V33H423" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw gesture-1" d="M391 24H414L423 33V57H391Z M414 24V33H423" pathLength="100" fill="none" stroke="#BDB6AD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M398 41H416M398 48H409" fill="none" stroke="#F3EEE7" stroke-opacity=".18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path class="motion draw gesture-2" d="M398 41H416M398 48H409" pathLength="100" fill="none" stroke="#FF6A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x=".5" y=".5" width="459" height="219" fill="none" stroke="#F3EEE7" stroke-opacity=".18"/>
 </svg>

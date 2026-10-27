@@ -36,20 +36,16 @@ def summarize(repositories, username):
 
 
 def accent_motion(x1, x2, y):
-    # Only this optional rail moves. All figures, language bars and labels stay put.
+    # Construct the divider once, leaving the permanent orange mark untouched.
+    # Default SVG attributes are the complete final state if CSS is unavailable.
     return f'''<style>
-.activity-sweep{{opacity:0;animation:activity-rail 9s ease-in-out infinite}}
-@keyframes activity-rail{{
-0%,12%{{stroke-dashoffset:0;opacity:0}}
-16%{{opacity:.85}}
-42%{{stroke-dashoffset:-.92;opacity:.85}}
-46%,100%{{stroke-dashoffset:-.92;opacity:0}}
-}}
+.activity-construction{{animation:activity-build 750ms cubic-bezier(.22,1,.36,1) 180ms 1 both}}
+@keyframes activity-build{{from{{stroke-dashoffset:1}}to{{stroke-dashoffset:0}}}}
 @media(prefers-reduced-motion:reduce){{
-.activity-sweep{{animation:none!important;opacity:0!important;stroke-dashoffset:0!important}}
+.activity-construction{{animation:none!important;stroke-dashoffset:0!important}}
 }}
 </style>
-<path class="activity-sweep" d="M{x1} {y} H{x2}" pathLength="1" fill="none" stroke="#FF6A00" stroke-width="2" stroke-dasharray=".08 .92" stroke-dashoffset="0" opacity="0" aria-hidden="true"/>'''
+<path class="activity-construction" d="M{x1 + 48} {y} H{x2}" pathLength="1" fill="none" stroke="#F3EEE7" stroke-width="1" stroke-dasharray="1 1" stroke-dashoffset="0" opacity=".24" aria-hidden="true"/>'''
 
 
 def render(summary, updated_date):
