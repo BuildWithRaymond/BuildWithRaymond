@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="252" viewBox="0 0 960 252" role="img" aria-labelledby="title desc">
-<title id="title">Public signal: 11 original public repositories and 4 stars</title>
+<title id="title">Public signal: 7 original public repositories and 4 stars</title>
 <desc id="desc">Language counts are repositories, not lines of code. Forks and this profile are excluded. Updated 2026-10-27 UTC.</desc>
 <rect x=".5" y=".5" width="959" height="251" fill="#0B0B0B" stroke="#1F1F1F"/>
 <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
@@ -20,7 +20,7 @@
 }
 </style>
 <path class="activity-sweep" d="M28 56 H932" pathLength="1" fill="none" stroke="#FF6A00" stroke-width="2" stroke-dasharray=".08 .92" stroke-dashoffset="0" opacity="0" aria-hidden="true"/>
-<text x="28" y="136" fill="#F3EEE7" font-size="54" font-weight="700">11</text>
+<text x="28" y="136" fill="#F3EEE7" font-size="54" font-weight="700">07</text>
 <text x="28" y="166" fill="#BDB6AD" font-size="16">Original public repositories</text>
 <text x="268" y="136" fill="#F3EEE7" font-size="54" font-weight="700">04</text>
 <text x="268" y="166" fill="#BDB6AD" font-size="16">Stars across these repos</text>
