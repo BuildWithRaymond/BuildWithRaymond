@@ -156,11 +156,14 @@ class ActivityTests(unittest.TestCase):
                 validator.validate_profile(root)
             for source in ["assets/sample.svg", "./assets/sample.svg",
                            "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/main/assets/sample.svg",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/sample.svg",
                            "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/" + "a" * 40 + "/assets/sample.svg"]:
                 self.assertEqual(validator.local_asset_path(source, root), asset.resolve())
             for source in ["../assets/sample.svg", "assets/../README.md", "assets/%2e%2e/sample.svg",
                            "https://example.org/assets/sample.svg", "//example.org/assets/sample.svg",
                            "https://raw.githubusercontent.com/other/profile/main/assets/sample.svg",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/develop/assets/sample.svg",
+                           "https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main-other/assets/sample.svg",
                            "assets/sample.svg?fetch=remote", "data:image/svg+xml,sample"]:
                 with self.subTest(source=source), self.assertRaises(AssertionError):
                     validator.local_asset_path(source, root)

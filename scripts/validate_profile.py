@@ -40,7 +40,7 @@ def local_asset_path(source, root=ROOT):
     if parsed.scheme or parsed.netloc:
         assert parsed.scheme == "https" and parsed.netloc == "raw.githubusercontent.com", f"Untrusted image host: {source}"
         match = re.fullmatch(
-            r"/BuildWithRaymond/BuildWithRaymond/(?:main|[0-9a-fA-F]{40})/(assets/.+)",
+            r"/BuildWithRaymond/BuildWithRaymond/(?:main|refs/heads/main|[0-9a-fA-F]{40})/(assets/.+)",
             unquote(parsed.path),
         )
         assert match, f"Image must belong to this profile's assets: {source}"
