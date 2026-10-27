@@ -1,11 +1,14 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/header-mobile.svg" />
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/header.svg" width="960" alt="Raymond Hernbrode — A higher standard online." />
+  <source media="(prefers-reduced-motion: no-preference) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/header-mobile.svg" />
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/header.svg" />
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/header-mobile-static.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/header-static.svg" width="960" alt="Raymond Hernbrode — A higher standard online." />
 </picture>
 
 <p>
   <a href="#what-i-build">What I build</a> · <a href="#selected-public-projects">Selected projects</a> · <a href="https://github.com/BuildWithRaymond?tab=repositories">All repositories ↗</a>
 </p>
+<p><a href="https://github.com/BuildWithRaymond/BuildWithRaymond/blob/main/STATIC.md">View without animation</a></p>
 
 I'm **Raymond Hernbrode**, the designer and developer behind **Hernbrode**. I started making websites as a hobby at 13, then moved into WordPress. That interest grew into building websites, web applications, and desktop tools.
 
@@ -25,7 +28,12 @@ Apps and community tools for **Dark Ages**. These are community software project
 
 ### [DAMerchant](https://github.com/BuildWithRaymond/DAMerchant)
 
-<a href="https://github.com/BuildWithRaymond/DAMerchant"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/da-merchant.svg" width="460" alt="DAMerchant / Trading and exchange" /></a>
+<a href="https://github.com/BuildWithRaymond/DAMerchant">
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-merchant.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-merchant-static.svg" width="460" alt="DAMerchant / Trading and exchange" />
+</picture>
+</a>
 
 A Windows trading tool that brings character listings, trade history, and an AislingExchange marketplace connection into one interface.
 
@@ -35,7 +43,12 @@ React · TypeScript · Electron · SQLite
 
 ### [DAOrganizer](https://github.com/BuildWithRaymond/DAOrganizer)
 
-<a href="https://github.com/BuildWithRaymond/DAOrganizer"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/da-organizer.svg" width="460" alt="DAOrganizer / Inventory and transfers" /></a>
+<a href="https://github.com/BuildWithRaymond/DAOrganizer">
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-organizer.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-organizer-static.svg" width="460" alt="DAOrganizer / Inventory and transfers" />
+</picture>
+</a>
 
 A Windows companion for searching a collection across characters, organizing inventory, and reviewing items held in banks.
 
@@ -43,12 +56,57 @@ C# · Avalonia · .NET · SQLite
 
 [Explore the source](https://github.com/BuildWithRaymond/DAOrganizer) · [Latest release](https://github.com/BuildWithRaymond/DAOrganizer/releases/latest)
 
-### More from the workshop
+### [DAQuester](https://github.com/BuildWithRaymond/DAQuester)
 
-- **[DAQuester](https://github.com/BuildWithRaymond/DAQuester)** — quest planning and tracking. [Latest release](https://github.com/BuildWithRaymond/DAQuester/releases/latest).
-- **[DASpeaker](https://github.com/BuildWithRaymond/DASpeaker)** — speech preparation and communication tooling. [Latest release](https://github.com/BuildWithRaymond/DASpeaker/releases/latest).
-- **[DASB](https://github.com/BuildWithRaymond/DASB)** — protocol and developer tooling.
-- **[UnoraWiki](https://github.com/BuildWithRaymond/UnoraWiki)** — a fork of the [Unora community wiki](https://github.com/unora-project/unora-project.github.io), with upstream credit retained.
+<a href="https://github.com/BuildWithRaymond/DAQuester">
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-quester.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-quester-static.svg" width="460" alt="DAQuester / Quest planning" />
+</picture>
+</a>
+
+Quest planning and tracking for the Dark Ages community.
+
+[Explore the source](https://github.com/BuildWithRaymond/DAQuester) · [Latest release](https://github.com/BuildWithRaymond/DAQuester/releases/latest)
+
+### [DASpeaker](https://github.com/BuildWithRaymond/DASpeaker)
+
+<a href="https://github.com/BuildWithRaymond/DASpeaker">
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-speaker.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-speaker-static.svg" width="460" alt="DASpeaker / Speech preparation" />
+</picture>
+</a>
+
+Speech preparation and communication tooling for Dark Ages.
+
+[Explore the source](https://github.com/BuildWithRaymond/DASpeaker) · [Latest release](https://github.com/BuildWithRaymond/DASpeaker/releases/latest)
+
+### [DASB](https://github.com/BuildWithRaymond/DASB)
+
+<a href="https://github.com/BuildWithRaymond/DASB">
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-dasb.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-dasb-static.svg" width="460" alt="DASB / Protocol and tooling" />
+</picture>
+</a>
+
+Protocol and developer tooling for Dark Ages.
+
+[Explore the source](https://github.com/BuildWithRaymond/DASB)
+
+### [UnoraWiki](https://github.com/BuildWithRaymond/UnoraWiki)
+
+<a href="https://github.com/BuildWithRaymond/UnoraWiki">
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-wiki.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/da-wiki-static.svg" width="460" alt="UnoraWiki / Community wiki / Fork" />
+</picture>
+</a>
+
+A fork of the [Unora community wiki](https://github.com/unora-project/unora-project.github.io), with upstream credit retained.
+
+[Explore the source](https://github.com/BuildWithRaymond/UnoraWiki)
 
 ## Tools I work with
 
@@ -57,11 +115,18 @@ C# / .NET · Avalonia · TypeScript · React / Next.js · Node.js · SQLite
 ## Built in public
 
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/activity-mobile.svg?v=motion-once-20261027-r2" />
-  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/activity.svg?v=motion-once-20261027-r2" width="960" alt="Original public repository and star totals, with primary language counts. Refreshed daily from public GitHub metadata." />
+  <source media="(prefers-reduced-motion: no-preference) and (max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/activity-mobile.svg?v=repeat-20261027" />
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/activity.svg?v=repeat-20261027" />
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/activity-mobile-static.svg?v=repeat-20261027" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/refs/heads/main/assets/activity-static.svg?v=repeat-20261027" width="960" alt="Original public repository and star totals, with primary language counts. Refreshed daily from public GitHub metadata." />
 </picture>
 
 Public repositories only. Forks and this profile repository are excluded. Languages are counted by repository, not by lines of code. Artwork refreshes daily from GitHub's public metadata.
 
-<a href="https://github.com/BuildWithRaymond?tab=repositories"><img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/aa380160d131def9207295835407c563c9802a38/assets/footer.svg" width="960" alt="Make something useful. Explore the repositories." /></a>
+<a href="https://github.com/BuildWithRaymond?tab=repositories">
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/footer.svg" />
+  <img src="https://raw.githubusercontent.com/BuildWithRaymond/BuildWithRaymond/331f30e763622be098971a307c4b8496efdc335c/assets/footer-static.svg" width="960" alt="Make something useful. Explore the repositories." />
+</picture>
+</a>
 
